@@ -27,19 +27,20 @@ public class EnemyMovement : MonoBehaviour
                 target =  LevelManager.main.path[pathIndex];
             }
         }
-        if(pathIndex >= 2 && pathIndex < 6){
-            facingRight = false;
-        }else if(pathIndex >= 6 && pathIndex < 7){
-            facingRight = true;
-        }else if(pathIndex >= 8){
-            facingRight = false;
-        }
+        //Change direction of Enemy
+        // if(pathIndex >= 2 && pathIndex < 6){
+        //     facingRight = false;
+        // }else if(pathIndex >= 6 && pathIndex < 7){
+        //     facingRight = true;
+        // }else if(pathIndex >= 8){
+        //     facingRight = false;
+        // }
 
-        if(facingRight){
-            transform.localScale = new Vector2(1,1);
-        }else{
-            transform.localScale = new Vector2(-1,1);
-        }
+        // if(facingRight){
+        //     transform.localScale = new Vector2(1,1);
+        // }else{
+        //     transform.localScale = new Vector2(-1,1);
+        // }
         
     }
     private void FixedUpdate(){
