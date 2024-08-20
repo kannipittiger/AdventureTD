@@ -36,6 +36,7 @@ public class EnemyMovement : MonoBehaviour
             }
         }
 
+
         if(pathIndex < 1){
             anim.SetBool ("left", false);
             anim.SetBool ("right", false);
@@ -128,6 +129,7 @@ public class EnemyMovement : MonoBehaviour
         //     facingRight = false;
         //     facingUp = false;
         //     facingDown = true;
+
         // }
 
         // if(facingRight){
