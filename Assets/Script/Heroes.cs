@@ -19,19 +19,26 @@ public class Heroes : MonoBehaviour
     private Transform target;
     private float timeUntilFire;
 
+    Animator anim;
+    
+
     private void Update(){
+        anim = GetComponent<Animator> ();
         if(target == null){
+            anim.SetBool ("area", false);
             FindTarget();
             return;
         }
         RotateTowardsTarget();
 
         if(!CheckTargetIsInRange()){
+            
             target = null;
         }else{
             timeUntilFire += Time.deltaTime;
             if(timeUntilFire >= 1f/bps){
                 Shoot();
+                anim.SetBool ("area", true);
                 timeUntilFire = 0f;
             }
         }
