@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1097987249535493498}
-  - component: {fileID: 1652589977605387640}
+  - component: {fileID: 3144809796752053650}
   m_Layer: 0
   m_Name: Hero
   m_TagString: Untagged
@@ -34,7 +34,7 @@ Transform:
   - {fileID: 3297565384605025315}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1652589977605387640
+--- !u!114 &3144809796752053650
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -46,11 +46,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3abc253bb11412d40bf7884083b986ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heroRotationPoint: {fileID: 4701704244638638385}
+  heroRotationPoint: {fileID: 0}
   enemyMask:
     serializedVersion: 2
-    m_Bits: 64
-  bulletPrefab: {fileID: 5985117446669051058, guid: c81def9970d3da649ad85e8ab7ebe5c1, type: 3}
+    m_Bits: 0
+  bulletPrefab: {fileID: 0}
   firingPoint: {fileID: 0}
   targetingRange: 5
   bps: 1
@@ -166,6 +166,6 @@ SpriteRenderer:
   m_Size: {x: 24.5625, y: 24.0625}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
