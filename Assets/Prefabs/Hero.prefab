@@ -51,8 +51,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   bulletPrefab: {fileID: 5985117446669051058, guid: c81def9970d3da649ad85e8ab7ebe5c1, type: 3}
-  firingPoint: {fileID: 0}
-  targetingRange: 5
+  firingPoint: {fileID: 3297565384605025315}
+  targetingRange: 8
   bps: 1
 --- !u!1 &2017550393038117570
 GameObject:
