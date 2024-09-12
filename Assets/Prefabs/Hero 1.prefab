@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5124229986380423551}
   - component: {fileID: 7519910628854476051}
   m_Layer: 0
-  m_Name: Hero
+  m_Name: Hero 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -52,7 +52,7 @@ MonoBehaviour:
   enemyMask:
     serializedVersion: 2
     m_Bits: 64
-  bulletPrefab: {fileID: 5985117446669051058, guid: c81def9970d3da649ad85e8ab7ebe5c1, type: 3}
+  bulletPrefab: {fileID: 5985117446669051058, guid: 5684990b69df9a646a8394c0da2a3d16, type: 3}
   firingPoint: {fileID: 3297565384605025315}
   targetingRange: 7
   bps: 1
@@ -118,7 +118,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4a36f2eaf4494884fbfc9e0e9d4c50f3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5bf777f36188b75408bb4007bf79ecaf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
