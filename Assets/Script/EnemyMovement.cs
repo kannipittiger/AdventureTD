@@ -105,8 +105,6 @@ public class EnemyMovement : MonoBehaviour
             anim.SetBool ("down", false);
 
         }
-
-        
     }
     private void FixedUpdate(){
         Vector2 direction = (target.position - transform.position).normalized;
