@@ -41,6 +41,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: corrupted
+    uniqueID: 428684799
+    locked: 0
+  - name: oncorrupt
+    uniqueID: 4259938109
+    locked: 0
   - name: MAP
     uniqueID: 2059283701
     locked: 0
