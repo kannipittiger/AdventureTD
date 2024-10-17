@@ -14,7 +14,7 @@ public class Heroes : MonoBehaviour
 
     [Header("Attribute")]
     [SerializeField] private float targetingRange = 5f;
-    [SerializeField] private float bps = 1f;//bullet per second
+    [SerializeField] private float aps = 1f;
 
     private Transform target;
     private float timeUntilFire;
@@ -29,14 +29,14 @@ public class Heroes : MonoBehaviour
             FindTarget();
             return;
         }
-        RotateTowardsTarget();
+        RotateTowardsTarget();// remove this if want line attack
 
         if(!CheckTargetIsInRange()){
             
             target = null;
         }else{
             timeUntilFire += Time.deltaTime;
-            if(timeUntilFire >= 1f/bps){
+            if(timeUntilFire >= 1f/aps){
                 Shoot();
                 anim.SetBool ("area", true);
                 timeUntilFire = 0f;

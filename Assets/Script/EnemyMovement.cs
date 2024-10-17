@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 // using System.Numerics;
@@ -16,11 +17,13 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] private Rigidbody2D rb;
 
     [Header("Attributes")]
-    [SerializeField] private float moveSpeed = 2f;
+    [SerializeField] private float moveSpeed = 5f;
 
     private Transform target;
     private int pathIndex = 0;
+    private float baseSpeed;
     private void Start(){
+        baseSpeed = moveSpeed;
         target =  LevelManager.main.path[pathIndex];
         rbody = GetComponent<Rigidbody2D> ();
 		anim = GetComponent<Animator> ();
@@ -111,4 +114,11 @@ public class EnemyMovement : MonoBehaviour
         rb.velocity = direction * moveSpeed;
     }
 
+    public void UpdateSpeed(float newSpeed){
+        moveSpeed = newSpeed;
+    }
+
+    public void ResetSpeed(){
+        moveSpeed = baseSpeed;
+    }
 }

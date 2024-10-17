@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1097987249535493498}
-  - component: {fileID: 3144809796752053650}
+  - component: {fileID: -6305267979446672227}
   - component: {fileID: 5124229986380423551}
   - component: {fileID: 7519910628854476051}
   m_Layer: 0
@@ -36,7 +36,7 @@ Transform:
   - {fileID: 3297565384605025315}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3144809796752053650
+--- !u!114 &-6305267979446672227
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -45,17 +45,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 466516421196534547}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3abc253bb11412d40bf7884083b986ed, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e015a6b771ee564a8250a82d24ae08d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heroRotationPoint: {fileID: 1097987249535493498}
+  heroRotationPoint: {fileID: 0}
   enemyMask:
     serializedVersion: 2
     m_Bits: 64
   bulletPrefab: {fileID: 5985117446669051058, guid: 5684990b69df9a646a8394c0da2a3d16, type: 3}
-  firingPoint: {fileID: 3297565384605025315}
-  targetingRange: 7
-  bps: 1
+  firingPoint: {fileID: 0}
+  targetingRange: 2
+  aps: 0.5
+  freezeTime: 1
 --- !u!95 &5124229986380423551
 Animator:
   serializedVersion: 5
@@ -118,7 +119,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5bf777f36188b75408bb4007bf79ecaf, type: 3}
+  m_Sprite: {fileID: 7163034264491450569, guid: 90c564741fb7e8a4098a6847e1dec155, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -231,7 +232,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1195195389
-  m_SortingLayer: 6
+  m_SortingLayer: 8
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 4a36f2eaf4494884fbfc9e0e9d4c50f3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
