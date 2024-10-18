@@ -13,6 +13,7 @@ public class Bullet : MonoBehaviour
     [SerializeField] private float bulletSpeed = 5f;
     [SerializeField] private int bulletDamage = 1;
     private Transform target;
+    Animator anim;
 
     public void SetTarget(Transform _target){
         target = _target;
@@ -28,7 +29,12 @@ public class Bullet : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D other){
         //Take health from enemy
         other.gameObject.GetComponent<Health>().TakeDamage(bulletDamage);
+        //เช็ค bulletชน
+
         Destroy(gameObject);
+        Debug.Log("kuykuy");
+
+        
     }
 
     private void RotateTowardsTarget(){
