@@ -4,19 +4,31 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
+    public static Health main;
     [Header("Attributes")]
-    [SerializeField] private int hitPoints = 2;
+    
     [SerializeField] private int currencyWorth = 50;
+    public int currentHP;
+    public int hitPoints = 30;
 
     private bool isDestroyed = false;
 
+    private void Awake(){
+        main = this;
+        currentHP = hitPoints;
+    }
     public void TakeDamage(int dmg){
-        hitPoints -= dmg;
-        if(hitPoints <= 0 && !isDestroyed){
+        currentHP -= dmg;
+        if(currentHP <= 0 && !isDestroyed){
             EnemySpawner.onEnemyDestroy.Invoke();
             LevelManager.main.IncreaseCurrency(currencyWorth);
             isDestroyed = true;
             Destroy(gameObject);
         }
+    }
+    public void SetHealth(int newHealth)
+    {
+        currentHP = newHealth;
+        Debug.Log("Enemy health updated: " + currentHP);
     }
 }

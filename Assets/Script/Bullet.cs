@@ -22,10 +22,10 @@ public class Bullet : MonoBehaviour
         anim = GetComponent<Animator>();
         if (anim != null)
         {
-            Debug.Log("isus");
+            // Debug.Log("isus");
         }
         else{
-            Debug.Log("ihere");
+            // Debug.Log("ihere");
         }
     }
 
@@ -54,11 +54,11 @@ public class Bullet : MonoBehaviour
     if (anim != null)
     {
         anim.SetTrigger("hit"); // เปลี่ยน Trigger เป็น "Hit"
-        Debug.Log("teedon");
+        // Debug.Log("teedon");
     }
     else
     {
-        Debug.Log("eiei");
+        // Debug.Log("eiei");
     }
 
     // เรียกใช้ Coroutine เพื่อรอให้แอนิเมชันเล่นเสร็จ

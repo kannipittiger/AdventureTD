@@ -17,7 +17,7 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] private Rigidbody2D rb;
 
     [Header("Attributes")]
-    [SerializeField] private float moveSpeed = 5f;
+    [SerializeField] private float moveSpeed = 2f;
 
     private Transform target;
     private int pathIndex = 0;
@@ -116,6 +116,7 @@ public class EnemyMovement : MonoBehaviour
 
     public void UpdateSpeed(float newSpeed){
         moveSpeed = newSpeed;
+        Debug.Log("Enemy speed : " + moveSpeed);
     }
 
     public void ResetSpeed(){
