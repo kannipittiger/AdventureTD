@@ -17,6 +17,7 @@ public class LevelManager : MonoBehaviour
     }
     public void IncreaseCurrency(int amount){
         currency += amount;
+        Debug.Log("Income : " + amount);
     }
     public bool SpendCurrency(int amount){
         if(amount <= currency){

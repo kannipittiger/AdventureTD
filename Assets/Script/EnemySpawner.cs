@@ -9,12 +9,13 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] TextMeshProUGUI waveText; // เพิ่มตัวแปรสำหรับข้อความ
 
     [Header("Attributes")]
-    [SerializeField] private int baseEnemies = 8;
+    [SerializeField] private int baseEnemies = 6;
     [SerializeField] private float enemiesPerSecond = 0.5f;
     [SerializeField] private float timeBetweenWaves = 5f;
     [SerializeField] private float difficultlyScalingFactor = 0.75f;
     [SerializeField] private int baseEnemyHealth = 30;
     [SerializeField] private int baseEnemySpeed = 2;
+    [SerializeField] private int baseMoney = 50;
 
     [Header("Events")]
     public static UnityEvent onEnemyDestroy = new UnityEvent();
@@ -27,11 +28,13 @@ public class EnemySpawner : MonoBehaviour
     
     private int currentHP; // ตัวแปรที่จะใช้เก็บค่า hitPoints
     private int currentSpeed;
+    private int currentMoney;
 
     private void Awake(){
         onEnemyDestroy.AddListener(EnemyDestroyed);
         currentHP = baseEnemyHealth;
         currentSpeed = baseEnemySpeed;
+        currentMoney = baseMoney;
         waveText.gameObject.SetActive(false); // ซ่อนข้อความเริ่มต้น
     }
     
@@ -72,15 +75,27 @@ public class EnemySpawner : MonoBehaviour
         currentWave++;
 
         // แสดงข้อความเมื่อเริ่ม wave 2
-        if (currentWave == 2) {
+        if (currentWave == 1) {
+            StartCoroutine(ShowWaveText("Wave 1"));
+        }
+        else if (currentWave == 2) {
             currentHP = baseEnemyHealth * 2;
             baseEnemyHealth = currentHP;
             StartCoroutine(ShowWaveText("Wave 2 : Enemy HP x 2"));
         }
         else if (currentWave == 3) {
+            currentMoney = baseMoney * 3;
+            baseMoney = currentMoney;
+            StartCoroutine(ShowWaveText("Wave 3 : Bonus wave money x 3"));
+        }
+        else if (currentWave == 4) {
             currentSpeed = baseEnemySpeed * 2;
             baseEnemySpeed = currentSpeed;
-            StartCoroutine(ShowWaveText("Wave 3 : Enemy Speed x 2"));
+            StartCoroutine(ShowWaveText("Wave 4 : Enemy Speed x 2"));
+        }else if (currentWave == 5){
+            currentHP = baseEnemyHealth * 3;
+            baseEnemyHealth = currentHP;
+            StartCoroutine(ShowWaveText("Wave 4 : Enemy HP x 3"));
         }
         StartCoroutine(StartWave());
     }
@@ -98,12 +113,22 @@ public class EnemySpawner : MonoBehaviour
         GameObject enemyInstance = Instantiate(prefabToSpawn, LevelManager.main.startPoint.position, Quaternion.identity);
         Health enemyHealth = enemyInstance.GetComponent<Health>();
         EnemyMovement enemySpeed = enemyInstance.GetComponent<EnemyMovement>();
-        if (enemyHealth != null)
+        Health enemyDrop = enemyInstance.GetComponent<Health>();
+        if (currentWave == 2)
         {
             enemyHealth.SetHealth(currentHP);            
         }
-        if(enemySpeed != null){
+        else if(currentWave == 3){
+            enemyDrop.SetCurrencyWorth(currentMoney);
+        }
+        else if(currentWave == 4){
+            enemyDrop.ResetCurrencyWorth();
             enemySpeed.UpdateSpeed(currentSpeed);
+        }
+        else if(currentWave == 5){
+            Debug.Log("HP & SPD : " + currentHP + " " + currentSpeed);
+            enemyHealth.SetHealth(currentHP);
+            // enemySpeed.UpdateSpeed(currentSpeed);
         }
     }
 
