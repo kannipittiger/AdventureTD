@@ -11473,8 +11473,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 416}
-  m_SizeDelta: {x: 493.5514, y: 80.2871}
+  m_AnchoredPosition: {x: 0, y: 410.20007}
+  m_SizeDelta: {x: 820.6674, y: 91.887}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &310735671
 MonoBehaviour:
@@ -11833,11 +11833,13 @@ MonoBehaviour:
   enemyPrefabs:
   - {fileID: 5231200815768558115, guid: 7ff018ac3f43dff44b756f1b1a8286b0, type: 3}
   waveText: {fileID: 310735671}
-  baseEnemies: 3
+  baseEnemies: 6
   enemiesPerSecond: 1
   timeBetweenWaves: 5
   difficultlyScalingFactor: 0.75
   baseEnemyHealth: 30
+  baseEnemySpeed: 2
+  baseMoney: 50
 --- !u!114 &567916109
 MonoBehaviour:
   m_ObjectHideFlags: 0
