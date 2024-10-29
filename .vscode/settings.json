@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "AdventureTD(2).sln"
+    "dotnet.defaultSolution": "AdventureTD.sln"
 }
