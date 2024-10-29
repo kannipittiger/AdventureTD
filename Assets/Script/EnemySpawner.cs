@@ -108,7 +108,7 @@ public class EnemySpawner : MonoBehaviour
     }
 
     private void SpawnEnemy(){
-        Debug.Log("Spawn Enemy");
+        // Debug.Log("Spawn Enemy");
         GameObject prefabToSpawn = enemyPrefabs[0];
         GameObject enemyInstance = Instantiate(prefabToSpawn, LevelManager.main.startPoint.position, Quaternion.identity);
         Health enemyHealth = enemyInstance.GetComponent<Health>();

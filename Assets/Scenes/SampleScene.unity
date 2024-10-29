@@ -11856,15 +11856,19 @@ MonoBehaviour:
   - name: Fire Wizard
     cost: 100
     prefab: {fileID: 466516421196534547, guid: bc31712159a53bd46b86e7e8f54b0e37, type: 3}
+    maxPlacement: 3
   - name: Ice Wizard
     cost: 300
     prefab: {fileID: 849524788425322923, guid: 1056f953f0eeefe4f8f339d25bf873c4, type: 3}
+    maxPlacement: 4
   - name: Knight
     cost: 200
     prefab: {fileID: 466516421196534547, guid: d3d5ab5e58d78bf46890971beb9b964f, type: 3}
+    maxPlacement: 0
   - name: Sniper
     cost: 500
     prefab: {fileID: 466516421196534547, guid: 4a8fa8fe4ca68f049b2f2d743d7f35a4, type: 3}
+    maxPlacement: 0
 --- !u!1 &629918333
 GameObject:
   m_ObjectHideFlags: 0
