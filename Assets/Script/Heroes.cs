@@ -35,10 +35,11 @@ public class Heroes : MonoBehaviour
             
             target = null;
         }else{
+            anim.SetBool ("area", true);
             timeUntilFire += Time.deltaTime;
             if(timeUntilFire >= 1f/aps){
                 Shoot();
-                anim.SetBool ("area", true);
+                
                 timeUntilFire = 0f;
             }
         }
