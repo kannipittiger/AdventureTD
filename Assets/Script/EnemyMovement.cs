@@ -116,7 +116,7 @@ public class EnemyMovement : MonoBehaviour
 
     public void UpdateSpeed(float newSpeed){
         moveSpeed = newSpeed;
-        Debug.Log("Enemy speed : " + moveSpeed);
+        // Debug.Log("Enemy speed : " + moveSpeed);
     }
 
     public void ResetSpeed(){

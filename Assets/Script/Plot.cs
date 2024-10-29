@@ -30,7 +30,13 @@ public class Plot : MonoBehaviour
             Debug.Log("You can't afford this tower");
             return;
         }
+        if (!BuildManager.main.CanPlaceSelectedTower())
+        {
+        Debug.Log("Max placement limit reached for this tower type!");
+        return;
+        }
         LevelManager.main.SpendCurrency(towerToBuild.cost);
         tower = Instantiate(towerToBuild.prefab, transform.position, Quaternion.identity);
+        BuildManager.main.RegisterTowerPlacement();
     }
 }

@@ -29,12 +29,12 @@ public class Health : MonoBehaviour
     public void SetHealth(int newHealth)
     {
         currentHP = newHealth;
-        Debug.Log("Enemy health updated: " + currentHP);
+        // Debug.Log("Enemy health updated: " + currentHP);
     }
     public void SetCurrencyWorth(int worth)
     {
         currencyWorth = worth;
-        Debug.Log("Enemy currency worth updated: " + currencyWorth);
+        // Debug.Log("Enemy currency worth updated: " + currencyWorth);
     }
     public void ResetCurrencyWorth(){
         currencyWorth = 50;
