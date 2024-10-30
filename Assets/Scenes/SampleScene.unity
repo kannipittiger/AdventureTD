@@ -11897,6 +11897,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefabs:
   - {fileID: 5231200815768558115, guid: 7ff018ac3f43dff44b756f1b1a8286b0, type: 3}
+  - {fileID: 1030939629}
   waveText: {fileID: 310735671}
   baseEnemies: 6
   enemiesPerSecond: 1
@@ -16340,13 +16341,25 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 5401361586688628797, guid: 7ff018ac3f43dff44b756f1b1a8286b0, type: 3}
+      propertyPath: hitPoints
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 5401361586688628797, guid: 7ff018ac3f43dff44b756f1b1a8286b0, type: 3}
+      propertyPath: currencyWorth
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 6359385069548271770, guid: 7ff018ac3f43dff44b756f1b1a8286b0, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 444810410c69f7044a41b4af53d5c96e, type: 2}
     - target: {fileID: 7849095466005265114, guid: 7ff018ac3f43dff44b756f1b1a8286b0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.5
+      value: 4.88
       objectReference: {fileID: 0}
     - target: {fileID: 7849095466005265114, guid: 7ff018ac3f43dff44b756f1b1a8286b0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -12.5
+      value: -12.37
       objectReference: {fileID: 0}
     - target: {fileID: 7849095466005265114, guid: 7ff018ac3f43dff44b756f1b1a8286b0, type: 3}
       propertyPath: m_LocalPosition.z
@@ -16389,6 +16402,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7ff018ac3f43dff44b756f1b1a8286b0, type: 3}
+--- !u!1 &1030939629 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5231200815768558115, guid: 7ff018ac3f43dff44b756f1b1a8286b0, type: 3}
+  m_PrefabInstance: {fileID: 1030939628}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1046037748
 PrefabInstance:
   m_ObjectHideFlags: 0
