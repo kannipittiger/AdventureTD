@@ -16,6 +16,7 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private int baseEnemyHealth = 30;
     [SerializeField] private int baseEnemySpeed = 2;
     [SerializeField] private int baseMoney = 50;
+    [SerializeField] private float enemiesPerSecondCap = 15f;
 
     [Header("Events")]
     public static UnityEvent onEnemyDestroy = new UnityEvent();
@@ -23,6 +24,7 @@ public class EnemySpawner : MonoBehaviour
     private int currentWave = 1;
     private float timeSinceLastSpawn;
     private int enemiesAlive;
+    private float eps;//enemy per second
     private int enemiesLeftToSpawn;
     private bool isSpawning = false;
     
@@ -47,7 +49,7 @@ public class EnemySpawner : MonoBehaviour
 
         timeSinceLastSpawn += Time.deltaTime;
 
-        if(timeSinceLastSpawn >= (1f / enemiesPerSecond) && enemiesLeftToSpawn > 0){
+        if(timeSinceLastSpawn >= (1f / eps) && enemiesLeftToSpawn > 0){
             SpawnEnemy();
             enemiesLeftToSpawn--;
             enemiesAlive++;
@@ -67,6 +69,7 @@ public class EnemySpawner : MonoBehaviour
         yield return new WaitForSeconds(timeBetweenWaves);
         isSpawning = true;
         enemiesLeftToSpawn = EnemiesPerWave();
+        eps = EnemiesPerSecond();
     }
 
     private void EndWave(){
@@ -109,7 +112,8 @@ public class EnemySpawner : MonoBehaviour
 
     private void SpawnEnemy(){
         // Debug.Log("Spawn Enemy");
-        GameObject prefabToSpawn = enemyPrefabs[0];
+        int index = Random.Range(0,enemyPrefabs.Length);
+        GameObject prefabToSpawn = enemyPrefabs[index];
         GameObject enemyInstance = Instantiate(prefabToSpawn, LevelManager.main.startPoint.position, Quaternion.identity);
         Health enemyHealth = enemyInstance.GetComponent<Health>();
         EnemyMovement enemySpeed = enemyInstance.GetComponent<EnemyMovement>();
@@ -134,5 +138,9 @@ public class EnemySpawner : MonoBehaviour
 
     private int EnemiesPerWave(){
         return Mathf.RoundToInt(baseEnemies * Mathf.Pow(currentWave, difficultlyScalingFactor));
+    }
+
+    private float EnemiesPerSecond(){
+        return Mathf.Clamp(enemiesPerSecond * Mathf.Pow(currentWave, difficultlyScalingFactor), 0f , enemiesPerSecondCap);
     }
 }
