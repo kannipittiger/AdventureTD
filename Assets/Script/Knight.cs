@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Knight : MonoBehaviour
 {
@@ -33,7 +34,7 @@ public class Knight : MonoBehaviour
             anim.SetBool("area", false);
             return;
         }
-
+        RotateTowardsTarget();
         anim.SetBool("area", true);
         timeUntilFire += Time.deltaTime;
 
@@ -95,7 +96,7 @@ public class Knight : MonoBehaviour
             scale.x = -scale.x;
         }
 
-        if (closestTarget.position.y < transform.position.y && scale.y > 0)
+        else if (closestTarget.position.y < transform.position.y && scale.y > 0)
         {
             scale.y = -scale.y;
         }
