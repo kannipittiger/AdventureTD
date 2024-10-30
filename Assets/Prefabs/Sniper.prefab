@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1097987249535493498}
+  - component: {fileID: 7112217617209378645}
   - component: {fileID: -6305267979446672227}
   - component: {fileID: 5124229986380423551}
   - component: {fileID: 7519910628854476051}
@@ -36,6 +37,26 @@ Transform:
   - {fileID: 3297565384605025315}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7112217617209378645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 466516421196534547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e45af9fe77fea4347838ff402361001e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heroRotationPoint: {fileID: 1097987249535493498}
+  enemyMask:
+    serializedVersion: 2
+    m_Bits: 64
+  bulletPrefab: {fileID: 5985117446669051058, guid: c81def9970d3da649ad85e8ab7ebe5c1, type: 3}
+  firingPoint: {fileID: 3297565384605025315}
+  targetingRange: 5
+  aps: 2
 --- !u!114 &-6305267979446672227
 MonoBehaviour:
   m_ObjectHideFlags: 0
