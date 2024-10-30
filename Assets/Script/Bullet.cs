@@ -42,7 +42,7 @@ public class Bullet : MonoBehaviour
     }
 
     private void OnCollisionEnter2D(Collision2D other)
-{
+    {
     // ลดพลังชีวิตของศัตรูเมื่อชน
     other.gameObject.GetComponent<Health>().TakeDamage(bulletDamage);
 
@@ -63,16 +63,16 @@ public class Bullet : MonoBehaviour
 
     // เรียกใช้ Coroutine เพื่อรอให้แอนิเมชันเล่นเสร็จ
     StartCoroutine(DestroyAfterAnimation());
-}
+    }
 
-private IEnumerator DestroyAfterAnimation()
-{
-    // รอให้แอนิเมชันเล่นเสร็จ (ปรับเวลาให้ตรงกับความยาวของแอนิเมชัน)
-    yield return new WaitForSeconds(0.5f); // ปรับเวลาตามความยาวของแอนิเมชัน Hit
+    private IEnumerator DestroyAfterAnimation()
+    {
+        // รอให้แอนิเมชันเล่นเสร็จ (ปรับเวลาให้ตรงกับความยาวของแอนิเมชัน)
+        yield return new WaitForSeconds(0.5f); // ปรับเวลาตามความยาวของแอนิเมชัน Hit
 
-    // ทำลายกระสุน
-    Destroy(gameObject);
-}
+        // ทำลายกระสุน
+        Destroy(gameObject);
+    }
 
 
     private void RotateTowardsTarget(){
