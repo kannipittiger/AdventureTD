@@ -11759,9 +11759,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefabs:
   - {fileID: 5231200815768558115, guid: 7ff018ac3f43dff44b756f1b1a8286b0, type: 3}
-
-  - {fileID: 0}
-
+  - {fileID: 5259146254566185522, guid: 4a5d10b1951f7104582e21ccc71dea1e, type: 3}
+  - {fileID: 1397267847681181789, guid: ea7e7dbd58711e94ea4b2f6bf5f7111e, type: 3}
   waveText: {fileID: 310735671}
   baseEnemies: 6
   enemiesPerSecond: 1
@@ -20085,11 +20084,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1097987249535493498, guid: 4a8fa8fe4ca68f049b2f2d743d7f35a4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.3
+      value: -6.58
       objectReference: {fileID: 0}
     - target: {fileID: 1097987249535493498, guid: 4a8fa8fe4ca68f049b2f2d743d7f35a4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.76
+      value: 0.28
       objectReference: {fileID: 0}
     - target: {fileID: 1097987249535493498, guid: 4a8fa8fe4ca68f049b2f2d743d7f35a4, type: 3}
       propertyPath: m_LocalPosition.z
@@ -20300,6 +20299,4 @@ SceneRoots:
   - {fileID: 1508001824}
   - {fileID: 1463127842}
   - {fileID: 1341135692}
-
   - {fileID: 2091443776}
-
