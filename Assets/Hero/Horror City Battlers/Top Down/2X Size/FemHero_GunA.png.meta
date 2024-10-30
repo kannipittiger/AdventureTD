@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -43,12 +43,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -108,7 +108,2527 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: FemHero_GunA_0
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 448
+        width: 30
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51a605af950afe341a6dc5de92a15d08
+      internalID: 1266079836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_1
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 448
+        width: 28
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6ab27ebfa64ea541ae444438bd3677f
+      internalID: 830548752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_2
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 448
+        width: 28
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b4b0e3211be8014bbb74fbe711bca9a
+      internalID: 2043546820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_3
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 448
+        width: 30
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90c4ec82c303100459b7b4e20af5dc62
+      internalID: -1233022208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_4
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 448
+        width: 28
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9664f6563acf2544b00b052e9ac0df6
+      internalID: 1843421397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_5
+      rect:
+        serializedVersion: 2
+        x: 688
+        y: 448
+        width: 28
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b0c09dfbbc0f3145aea44d700fcee24
+      internalID: 1751147911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_6
+      rect:
+        serializedVersion: 2
+        x: 816
+        y: 448
+        width: 30
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 111d0dd83e8c22948a7aeebd551d9912
+      internalID: 1097722595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_7
+      rect:
+        serializedVersion: 2
+        x: 944
+        y: 448
+        width: 28
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29b6dc6ed99f98f49b630d1125f4fa23
+      internalID: -320610728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_8
+      rect:
+        serializedVersion: 2
+        x: 1072
+        y: 448
+        width: 28
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 516468bed1bc3fc41b0554abc3b500c7
+      internalID: 686650741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_9
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 448
+        width: 30
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38aba23acab5ed749b9e8e6f767293bd
+      internalID: 984049881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_10
+      rect:
+        serializedVersion: 2
+        x: 1328
+        y: 448
+        width: 28
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58416b5254c5af540bdce12176a0db09
+      internalID: 680952787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_11
+      rect:
+        serializedVersion: 2
+        x: 1456
+        y: 448
+        width: 28
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d72fd65662e81d47994ce6d621e108d
+      internalID: 388695342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_12
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 384
+        width: 42
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c624b460ff01ec4896c9ec9abf49fd3
+      internalID: 160304945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_13
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 384
+        width: 42
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10a997d039c3afb4588d1ee4fb8a4748
+      internalID: 554651928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_14
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 384
+        width: 42
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff55486b4ef59594d931cb4e5816e52c
+      internalID: -829303365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_15
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 384
+        width: 58
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e09aeed2845b1b94f84c94866ce6ca28
+      internalID: -1038355437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_16
+      rect:
+        serializedVersion: 2
+        x: 534
+        y: 384
+        width: 58
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 271648e986922bc429d5110912add815
+      internalID: -1335556951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_17
+      rect:
+        serializedVersion: 2
+        x: 662
+        y: 384
+        width: 58
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95cf909ad09e1f4419088a4ac5da2bec
+      internalID: 24909945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_18
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 400
+        width: 6
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2aa1f9c71a740848b3024f8b3a3e41d
+      internalID: 1221026382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_19
+      rect:
+        serializedVersion: 2
+        x: 794
+        y: 384
+        width: 54
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a70fef48dc31be438b0f244108ca55d
+      internalID: -2049755805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_20
+      rect:
+        serializedVersion: 2
+        x: 920
+        y: 402
+        width: 6
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e5a80b30738bc24da0f7e32726dc891
+      internalID: 1978603262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_21
+      rect:
+        serializedVersion: 2
+        x: 922
+        y: 384
+        width: 54
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d23c9d43ca1d62d46a73c06216aa7430
+      internalID: 478072506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_22
+      rect:
+        serializedVersion: 2
+        x: 1048
+        y: 400
+        width: 6
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa324bd3429f63e44990f53e6b85456f
+      internalID: 809405813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_23
+      rect:
+        serializedVersion: 2
+        x: 1050
+        y: 384
+        width: 54
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4488f74c0d37cb5438075306e28de59f
+      internalID: 742370629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_24
+      rect:
+        serializedVersion: 2
+        x: 1180
+        y: 384
+        width: 52
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3af6cf2328cad7d44a011dc46b1f4721
+      internalID: 1896814679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_25
+      rect:
+        serializedVersion: 2
+        x: 1308
+        y: 384
+        width: 52
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: beae8688549e06c4aba4e9ba8a27e61d
+      internalID: -2016240880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_26
+      rect:
+        serializedVersion: 2
+        x: 1436
+        y: 384
+        width: 52
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 617e1d7a407e5494ba6174bfed6f9f96
+      internalID: 609642747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_27
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 320
+        width: 42
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72d1493b5bb60ef40b825555b60ee9b5
+      internalID: 125377637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_28
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 320
+        width: 42
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cf4919fbbb77aa42be51f085ef5e82e
+      internalID: 157204684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_29
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 320
+        width: 42
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e9d546cacab61240be9f34a23280bd4
+      internalID: 362154101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_30
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 320
+        width: 58
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 447bc8215ae6ee446ba86530910d1e9e
+      internalID: -1988467402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_31
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 320
+        width: 58
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35d76e8eebb10ba4b8a8702f78dc675a
+      internalID: 2062254561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_32
+      rect:
+        serializedVersion: 2
+        x: 688
+        y: 320
+        width: 58
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 596872721ab86be43a21052dd2dac50e
+      internalID: -817432166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_33
+      rect:
+        serializedVersion: 2
+        x: 816
+        y: 320
+        width: 54
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 483524b18de09af4fb8b7ed1899546f3
+      internalID: -2103005185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_34
+      rect:
+        serializedVersion: 2
+        x: 866
+        y: 336
+        width: 6
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 763df7d9dfd852142b468a87a66a4f48
+      internalID: -1490049434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_35
+      rect:
+        serializedVersion: 2
+        x: 944
+        y: 320
+        width: 54
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4306b99b7ed2dc428a9ad61ddf44e15
+      internalID: -1699212174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_36
+      rect:
+        serializedVersion: 2
+        x: 994
+        y: 338
+        width: 6
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fa8b17bbafad1e4bb590e9d6386a54f
+      internalID: -765023838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_37
+      rect:
+        serializedVersion: 2
+        x: 1072
+        y: 320
+        width: 54
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1219afbd0abbab246bba200d67d7113d
+      internalID: 509941605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_38
+      rect:
+        serializedVersion: 2
+        x: 1122
+        y: 336
+        width: 6
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 753203b93ed853a469f2bd6a8bcb420f
+      internalID: -1047745442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_39
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 320
+        width: 52
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3584925ad00640b40a16f3058719fabc
+      internalID: -1890661422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_40
+      rect:
+        serializedVersion: 2
+        x: 1328
+        y: 316
+        width: 52
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de56117bc701ec04fbbdd23382e6fe16
+      internalID: 1357182686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_41
+      rect:
+        serializedVersion: 2
+        x: 1456
+        y: 320
+        width: 52
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d0e18d25561a024c8b43ae10ff84a0f
+      internalID: -208015485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_42
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 256
+        width: 28
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb2dd57ae49999a47983b21c02cf4a4c
+      internalID: -660006029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_43
+      rect:
+        serializedVersion: 2
+        x: 562
+        y: 256
+        width: 26
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d081cd0de35afd14e92f1714d69cac46
+      internalID: 1160158556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_44
+      rect:
+        serializedVersion: 2
+        x: 690
+        y: 256
+        width: 26
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98df03253c1013948bf0991dfc631b5b
+      internalID: -1000349183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_45
+      rect:
+        serializedVersion: 2
+        x: 842
+        y: 310
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84908d6f2337beb49b6c0c7213c54e54
+      internalID: -1099389730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_46
+      rect:
+        serializedVersion: 2
+        x: 946
+        y: 256
+        width: 30
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96c891d1b9b280c46ac1f630bf01cccb
+      internalID: 621125099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_47
+      rect:
+        serializedVersion: 2
+        x: 970
+        y: 312
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b64039c08e0377a44a5bd20ed9f737bd
+      internalID: -292890258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_48
+      rect:
+        serializedVersion: 2
+        x: 1098
+        y: 310
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 754bbf1c18351884b9dd08c272382e89
+      internalID: 785057026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_49
+      rect:
+        serializedVersion: 2
+        x: 1202
+        y: 256
+        width: 28
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2785e368de1a6124d8b609d3dec2d846
+      internalID: -899308653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_50
+      rect:
+        serializedVersion: 2
+        x: 1228
+        y: 310
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 347e5b74fe208584caeb11e0163b7fbd
+      internalID: -323868011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_51
+      rect:
+        serializedVersion: 2
+        x: 1356
+        y: 312
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77b4b1beaccebcd4a8f9a489e506c048
+      internalID: -466933179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_52
+      rect:
+        serializedVersion: 2
+        x: 1458
+        y: 256
+        width: 28
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d168ab8bd207224499081b3abed5562
+      internalID: 33085102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_53
+      rect:
+        serializedVersion: 2
+        x: 1484
+        y: 310
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c0f5eb5f119479418dea0a32b204106
+      internalID: 369232306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_54
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 256
+        width: 28
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f4849eb36c2d224f821884d748cfa8e
+      internalID: 823494659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_55
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 256
+        width: 28
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4077e1eae543d854ba13a4283de784ea
+      internalID: -1248254618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_56
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 256
+        width: 28
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7106a69e17e4f9544bd7e89be25e7588
+      internalID: 1987963456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_57
+      rect:
+        serializedVersion: 2
+        x: 818
+        y: 256
+        width: 30
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09b5442eea78918469851103426a5de8
+      internalID: -241300076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_58
+      rect:
+        serializedVersion: 2
+        x: 1074
+        y: 256
+        width: 30
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebbceb63f12cb1f479719df0877c30b4
+      internalID: -1830628942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_59
+      rect:
+        serializedVersion: 2
+        x: 1330
+        y: 256
+        width: 28
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a43a8e2ec1df5f45a2349ffa3175bc2
+      internalID: 1146989741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_60
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 192
+        width: 30
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c3206958f5ca84409af6e51b30a2208
+      internalID: 630275614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_61
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 192
+        width: 28
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 309e77aec52aa174d872e1c28bc3e852
+      internalID: -243980366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_62
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 192
+        width: 28
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d82ee9c53e5eed249bef3a8378617a9f
+      internalID: -360575688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_63
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 192
+        width: 30
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 440a279da7566154fa0fe8818d545776
+      internalID: 1855739421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_64
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 192
+        width: 28
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24ad813548e83f744adb8547f70c1f40
+      internalID: -90731259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_65
+      rect:
+        serializedVersion: 2
+        x: 688
+        y: 192
+        width: 28
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55920fb84589a824caa9c65f9c2cd3cb
+      internalID: -907611840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_66
+      rect:
+        serializedVersion: 2
+        x: 816
+        y: 192
+        width: 30
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f385520b98cf7b440a88e41ec72bf120
+      internalID: -741033130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_67
+      rect:
+        serializedVersion: 2
+        x: 944
+        y: 192
+        width: 28
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8782b8131e20952409a7d66e906e58c9
+      internalID: -1145825608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_68
+      rect:
+        serializedVersion: 2
+        x: 1072
+        y: 192
+        width: 28
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8e3a85b168c7764cb2b578de9f3cd87
+      internalID: 1505331061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_69
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 192
+        width: 30
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d7bed10a3b42fe479c59e2be4525838
+      internalID: 743918770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_70
+      rect:
+        serializedVersion: 2
+        x: 1328
+        y: 192
+        width: 28
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bde04d10adc989e4097ed49e02acad01
+      internalID: 851637757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_71
+      rect:
+        serializedVersion: 2
+        x: 1456
+        y: 192
+        width: 28
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7050f99b5003c8e43bb3ae2dcc33fe82
+      internalID: 15533117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_72
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 128
+        width: 42
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe93a213adb22e14ea6fc13b9df0ab68
+      internalID: -343588394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_73
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 128
+        width: 42
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 389be58ee9d1a1e44bd21bfc95330d00
+      internalID: -1616900924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_74
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 128
+        width: 42
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8efaae99a6963c64bbfa6337b31a2ba3
+      internalID: 414674998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_75
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 128
+        width: 58
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d49753b9bc1e4164c8b41add29f1f8ac
+      internalID: 83571372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_76
+      rect:
+        serializedVersion: 2
+        x: 534
+        y: 128
+        width: 58
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8223f846dcd9aa45918a8fa247c640b
+      internalID: 625598572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_77
+      rect:
+        serializedVersion: 2
+        x: 662
+        y: 128
+        width: 58
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e92f5fcd472a4046bbe45f99b365a4b
+      internalID: 1927223492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_78
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 144
+        width: 6
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8325e6cc2c8bdfc409d7374e40afd2fa
+      internalID: -267190306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_79
+      rect:
+        serializedVersion: 2
+        x: 794
+        y: 128
+        width: 54
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90f47a799c9209e4f940e3dddc0df15e
+      internalID: -305356486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_80
+      rect:
+        serializedVersion: 2
+        x: 920
+        y: 146
+        width: 6
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c090dc85e00391b4a9b6fb3caabdf901
+      internalID: -616900198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_81
+      rect:
+        serializedVersion: 2
+        x: 922
+        y: 128
+        width: 54
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62851ad5999771e47b41279f8288a705
+      internalID: -1924801500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_82
+      rect:
+        serializedVersion: 2
+        x: 1048
+        y: 144
+        width: 6
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 017b50211165d0d4b930875a2d588926
+      internalID: 1372166924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_83
+      rect:
+        serializedVersion: 2
+        x: 1050
+        y: 128
+        width: 54
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37f1d542b7d0bf84289c1c9ea8feba7e
+      internalID: -221910996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_84
+      rect:
+        serializedVersion: 2
+        x: 1180
+        y: 128
+        width: 52
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be987d74bc129134b8eb9a7bbd2e9213
+      internalID: 283556616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_85
+      rect:
+        serializedVersion: 2
+        x: 1308
+        y: 128
+        width: 52
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e0cb2d41566b3f4da022f788edd0ac1
+      internalID: 352322734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_86
+      rect:
+        serializedVersion: 2
+        x: 1436
+        y: 128
+        width: 52
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46a6aed83048e844fb42200f5e499010
+      internalID: -1131245599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_87
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 64
+        width: 42
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4f042adcf1648549aee59157e838566
+      internalID: -218530488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_88
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 64
+        width: 42
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: beb22348c5449504fa0ae53d00764530
+      internalID: 1815105624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_89
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 64
+        width: 42
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 182b8be8a8a983b46ada9787f48fb43e
+      internalID: 729330710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_90
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 64
+        width: 58
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbae15eadc8e3f841852e0bd9165304a
+      internalID: -1894069307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_91
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 64
+        width: 58
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bebf021aaee955f418168674ddb9ec0e
+      internalID: -1232227299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_92
+      rect:
+        serializedVersion: 2
+        x: 688
+        y: 64
+        width: 58
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97551cb3602f3494489192470c68fb19
+      internalID: -2145017817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_93
+      rect:
+        serializedVersion: 2
+        x: 816
+        y: 64
+        width: 54
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62570ac79ce7e00489146ed7198722fe
+      internalID: -425540458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_94
+      rect:
+        serializedVersion: 2
+        x: 866
+        y: 80
+        width: 6
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cda5e436a95a50e43a238b90e65fbd30
+      internalID: 809792535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_95
+      rect:
+        serializedVersion: 2
+        x: 944
+        y: 64
+        width: 54
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efb0f289e14192944945bc5712e301c6
+      internalID: 1225721021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_96
+      rect:
+        serializedVersion: 2
+        x: 994
+        y: 82
+        width: 6
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e3a1559e6d587d41993f5e23cf1f843
+      internalID: 1136375253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_97
+      rect:
+        serializedVersion: 2
+        x: 1072
+        y: 64
+        width: 54
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ab5db6eedfd62647a087bc79fa16dbb
+      internalID: 1357268937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_98
+      rect:
+        serializedVersion: 2
+        x: 1122
+        y: 80
+        width: 6
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90238fe0536fd7945a30860fe9db6d4d
+      internalID: -189525953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_99
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 64
+        width: 52
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 999d986e2d8494b4293b7602dbc014fd
+      internalID: 1956531544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_100
+      rect:
+        serializedVersion: 2
+        x: 1328
+        y: 60
+        width: 52
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b320e8d28ea0004cae190cde7594fc2
+      internalID: 2116306645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_101
+      rect:
+        serializedVersion: 2
+        x: 1456
+        y: 64
+        width: 52
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a719e093ee80ae42ab5e428b9d549b0
+      internalID: -156212029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_102
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 0
+        width: 28
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a8c999bc7ac13742a461241651342dd
+      internalID: -317666050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_103
+      rect:
+        serializedVersion: 2
+        x: 562
+        y: 0
+        width: 26
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5755a2fcbd758e54ea4d786639dd5127
+      internalID: -535453937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_104
+      rect:
+        serializedVersion: 2
+        x: 690
+        y: 0
+        width: 26
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39ebe6ca9c6826648b800b1c3fd7bae1
+      internalID: -1187554827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_105
+      rect:
+        serializedVersion: 2
+        x: 842
+        y: 54
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd441c7dca62f6a43aaca2cdb55c261c
+      internalID: 655577215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_106
+      rect:
+        serializedVersion: 2
+        x: 946
+        y: 0
+        width: 30
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f0b7fcdbda94fc4397b57141009690f
+      internalID: 1606882882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_107
+      rect:
+        serializedVersion: 2
+        x: 970
+        y: 56
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a844c09541d1394c98f16d06996512f
+      internalID: -11992130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_108
+      rect:
+        serializedVersion: 2
+        x: 1098
+        y: 54
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcb06ccbacfb50d4bb6e6ac86504f28c
+      internalID: -510216806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_109
+      rect:
+        serializedVersion: 2
+        x: 1202
+        y: 0
+        width: 28
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0d346ffc113c024d89d9c5ab6a0e6a4
+      internalID: -327015032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_110
+      rect:
+        serializedVersion: 2
+        x: 1228
+        y: 54
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ddde0ef2ef0d1764488c1c3c09dc509e
+      internalID: -1468508669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_111
+      rect:
+        serializedVersion: 2
+        x: 1356
+        y: 56
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 951fab8caa239bf4bb9dc32bdd8ca241
+      internalID: 109353765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_112
+      rect:
+        serializedVersion: 2
+        x: 1458
+        y: 0
+        width: 28
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72f658f9f88e5644b8bdb14ce7c20d3e
+      internalID: 262952157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_113
+      rect:
+        serializedVersion: 2
+        x: 1484
+        y: 54
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa6e046bae4984b40b7e249fe58ff684
+      internalID: 956538847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_114
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 0
+        width: 28
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fba5986f8c21f60459c17cac0498d519
+      internalID: -999821854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_115
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 0
+        width: 28
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57a0c65cbab287c41ab4c331f1ed8bd8
+      internalID: 142727304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_116
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 0
+        width: 28
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9c0c6408c2814147893bb5cadc1a11b
+      internalID: -1423748250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_117
+      rect:
+        serializedVersion: 2
+        x: 818
+        y: 0
+        width: 30
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34f90c5b2227c9d43b89a6a1e57070e6
+      internalID: 498294228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_118
+      rect:
+        serializedVersion: 2
+        x: 1074
+        y: 0
+        width: 30
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d03e6adacbbbfc44d8a1cabb2be24158
+      internalID: -1571044258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FemHero_GunA_119
+      rect:
+        serializedVersion: 2
+        x: 1330
+        y: 0
+        width: 28
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e681a233267a0624b9dc55f56ad4abbe
+      internalID: -643857195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -119,7 +2639,127 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      FemHero_GunA_0: 1266079836
+      FemHero_GunA_1: 830548752
+      FemHero_GunA_10: 680952787
+      FemHero_GunA_100: 2116306645
+      FemHero_GunA_101: -156212029
+      FemHero_GunA_102: -317666050
+      FemHero_GunA_103: -535453937
+      FemHero_GunA_104: -1187554827
+      FemHero_GunA_105: 655577215
+      FemHero_GunA_106: 1606882882
+      FemHero_GunA_107: -11992130
+      FemHero_GunA_108: -510216806
+      FemHero_GunA_109: -327015032
+      FemHero_GunA_11: 388695342
+      FemHero_GunA_110: -1468508669
+      FemHero_GunA_111: 109353765
+      FemHero_GunA_112: 262952157
+      FemHero_GunA_113: 956538847
+      FemHero_GunA_114: -999821854
+      FemHero_GunA_115: 142727304
+      FemHero_GunA_116: -1423748250
+      FemHero_GunA_117: 498294228
+      FemHero_GunA_118: -1571044258
+      FemHero_GunA_119: -643857195
+      FemHero_GunA_12: 160304945
+      FemHero_GunA_13: 554651928
+      FemHero_GunA_14: -829303365
+      FemHero_GunA_15: -1038355437
+      FemHero_GunA_16: -1335556951
+      FemHero_GunA_17: 24909945
+      FemHero_GunA_18: 1221026382
+      FemHero_GunA_19: -2049755805
+      FemHero_GunA_2: 2043546820
+      FemHero_GunA_20: 1978603262
+      FemHero_GunA_21: 478072506
+      FemHero_GunA_22: 809405813
+      FemHero_GunA_23: 742370629
+      FemHero_GunA_24: 1896814679
+      FemHero_GunA_25: -2016240880
+      FemHero_GunA_26: 609642747
+      FemHero_GunA_27: 125377637
+      FemHero_GunA_28: 157204684
+      FemHero_GunA_29: 362154101
+      FemHero_GunA_3: -1233022208
+      FemHero_GunA_30: -1988467402
+      FemHero_GunA_31: 2062254561
+      FemHero_GunA_32: -817432166
+      FemHero_GunA_33: -2103005185
+      FemHero_GunA_34: -1490049434
+      FemHero_GunA_35: -1699212174
+      FemHero_GunA_36: -765023838
+      FemHero_GunA_37: 509941605
+      FemHero_GunA_38: -1047745442
+      FemHero_GunA_39: -1890661422
+      FemHero_GunA_4: 1843421397
+      FemHero_GunA_40: 1357182686
+      FemHero_GunA_41: -208015485
+      FemHero_GunA_42: -660006029
+      FemHero_GunA_43: 1160158556
+      FemHero_GunA_44: -1000349183
+      FemHero_GunA_45: -1099389730
+      FemHero_GunA_46: 621125099
+      FemHero_GunA_47: -292890258
+      FemHero_GunA_48: 785057026
+      FemHero_GunA_49: -899308653
+      FemHero_GunA_5: 1751147911
+      FemHero_GunA_50: -323868011
+      FemHero_GunA_51: -466933179
+      FemHero_GunA_52: 33085102
+      FemHero_GunA_53: 369232306
+      FemHero_GunA_54: 823494659
+      FemHero_GunA_55: -1248254618
+      FemHero_GunA_56: 1987963456
+      FemHero_GunA_57: -241300076
+      FemHero_GunA_58: -1830628942
+      FemHero_GunA_59: 1146989741
+      FemHero_GunA_6: 1097722595
+      FemHero_GunA_60: 630275614
+      FemHero_GunA_61: -243980366
+      FemHero_GunA_62: -360575688
+      FemHero_GunA_63: 1855739421
+      FemHero_GunA_64: -90731259
+      FemHero_GunA_65: -907611840
+      FemHero_GunA_66: -741033130
+      FemHero_GunA_67: -1145825608
+      FemHero_GunA_68: 1505331061
+      FemHero_GunA_69: 743918770
+      FemHero_GunA_7: -320610728
+      FemHero_GunA_70: 851637757
+      FemHero_GunA_71: 15533117
+      FemHero_GunA_72: -343588394
+      FemHero_GunA_73: -1616900924
+      FemHero_GunA_74: 414674998
+      FemHero_GunA_75: 83571372
+      FemHero_GunA_76: 625598572
+      FemHero_GunA_77: 1927223492
+      FemHero_GunA_78: -267190306
+      FemHero_GunA_79: -305356486
+      FemHero_GunA_8: 686650741
+      FemHero_GunA_80: -616900198
+      FemHero_GunA_81: -1924801500
+      FemHero_GunA_82: 1372166924
+      FemHero_GunA_83: -221910996
+      FemHero_GunA_84: 283556616
+      FemHero_GunA_85: 352322734
+      FemHero_GunA_86: -1131245599
+      FemHero_GunA_87: -218530488
+      FemHero_GunA_88: 1815105624
+      FemHero_GunA_89: 729330710
+      FemHero_GunA_9: 984049881
+      FemHero_GunA_90: -1894069307
+      FemHero_GunA_91: -1232227299
+      FemHero_GunA_92: -2145017817
+      FemHero_GunA_93: -425540458
+      FemHero_GunA_94: 809792535
+      FemHero_GunA_95: 1225721021
+      FemHero_GunA_96: 1136375253
+      FemHero_GunA_97: 1357268937
+      FemHero_GunA_98: -189525953
+      FemHero_GunA_99: 1956531544
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
