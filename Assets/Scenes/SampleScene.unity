@@ -11759,7 +11759,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefabs:
   - {fileID: 5231200815768558115, guid: 7ff018ac3f43dff44b756f1b1a8286b0, type: 3}
+
   - {fileID: 0}
+
   waveText: {fileID: 310735671}
   baseEnemies: 6
   enemiesPerSecond: 1
@@ -11768,6 +11770,7 @@ MonoBehaviour:
   baseEnemyHealth: 30
   baseEnemySpeed: 2
   baseMoney: 50
+  enemiesPerSecondCap: 15
 --- !u!114 &567916109
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20297,4 +20300,6 @@ SceneRoots:
   - {fileID: 1508001824}
   - {fileID: 1463127842}
   - {fileID: 1341135692}
+
   - {fileID: 2091443776}
+
