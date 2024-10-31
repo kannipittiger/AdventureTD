@@ -31,11 +31,13 @@ public class Knight : MonoBehaviour
 
         if (targets.Count == 0)
         {
-            anim.SetBool("area", false);
+            anim.SetBool("up", false);
+            anim.SetBool("down", false);
+            anim.SetBool("left", false);
+            anim.SetBool("right", false);
             return;
         }
         RotateTowardsTarget();
-        anim.SetBool("area", true);
         timeUntilFire += Time.deltaTime;
 
         if (timeUntilFire >= 1f / aps)
@@ -81,32 +83,59 @@ public class Knight : MonoBehaviour
     }
 
     private void RotateTowardsTarget()
+{
+    if (targets.Count == 0) return;
+
+    Transform closestTarget = targets[0];
+
+    // รีเซ็ตค่าแอนิเมชันทั้งหมดก่อนตั้งค่าใหม่
+    anim.SetBool("up", false);
+    anim.SetBool("down", false);
+    anim.SetBool("left", false);
+    anim.SetBool("right", false);
+
+    // ตรวจสอบตำแหน่งของ enemy เพื่อกำหนดทิศทาง
+    if (Mathf.Abs(closestTarget.position.x - transform.position.x) > Mathf.Abs(closestTarget.position.y - transform.position.y))
     {
-        if (targets.Count == 0) return;
-
-        Transform closestTarget = targets[0];
-        Vector3 scale = heroRotationPoint.localScale;
-
-        if (closestTarget.position.x < transform.position.x && scale.x > 0)
+        // enemy อยู่ในแนวนอน
+        if (closestTarget.position.x < transform.position.x)
         {
-            scale.x = -scale.x;
+            // enemy อยู่ด้านซ้าย
+            anim.SetBool("up", false);
+    anim.SetBool("down", false);
+    anim.SetBool("left", true);
+    anim.SetBool("right", false);
         }
-        else if (closestTarget.position.x > transform.position.x && scale.x < 0)
+        else
         {
-            scale.x = -scale.x;
+            // enemy อยู่ด้านขวา
+            anim.SetBool("up", false);
+    anim.SetBool("down", false);
+    anim.SetBool("left", false);
+    anim.SetBool("right", true);
         }
-
-        else if (closestTarget.position.y < transform.position.y && scale.y > 0)
-        {
-            scale.y = -scale.y;
-        }
-        else if (closestTarget.position.y > transform.position.y && scale.y < 0)
-        {
-            scale.y = -scale.y;
-        }
-
-        heroRotationPoint.localScale = scale;
     }
+    else
+    {
+        // enemy อยู่ในแนวตั้ง
+        if (closestTarget.position.y < transform.position.y)
+        {
+            // enemy อยู่ด้านล่าง
+            anim.SetBool("up", false);
+    anim.SetBool("down", true);
+    anim.SetBool("left", false);
+    anim.SetBool("right", false);
+        }
+        else
+        {
+            // enemy อยู่ด้านบน
+            anim.SetBool("up", true);
+    anim.SetBool("down", false);
+    anim.SetBool("left", false);
+    anim.SetBool("right", false);
+        }
+    }
+}
 
     #if UNITY_EDITOR
     private void OnDrawGizmosSelected()
