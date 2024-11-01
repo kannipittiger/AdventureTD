@@ -47,10 +47,10 @@ public class Knight : MonoBehaviour
             {
                 if (CheckTargetIsInRange(target))
                 {
-                    
-                    Shoot(target);  // Shoot all targets in range
                     RotateTowardsTarget();
+                    Shoot(target);  // Shoot all targets in range
                     SoundManager.instance.PlaySound(swordSound);
+                    
                 }
                 
             }
@@ -112,6 +112,7 @@ public class Knight : MonoBehaviour
             // anim.SetBool("left", true);
             // anim.SetBool("right", false);
             anim.SetTrigger("lleft");
+            
         }
         else
         {
@@ -121,6 +122,7 @@ public class Knight : MonoBehaviour
             // anim.SetBool("left", false);
             // anim.SetBool("right", true);
             anim.SetTrigger("rright");
+            
         }
     }
     else
@@ -134,6 +136,7 @@ public class Knight : MonoBehaviour
             // anim.SetBool("left", false);
             // anim.SetBool("right", false);
             anim.SetTrigger("ddown");
+            
         }
         else
         {
@@ -143,8 +146,9 @@ public class Knight : MonoBehaviour
             // anim.SetBool("left", false);
             // anim.SetBool("right", false);
             anim.SetTrigger("aup");
+            
         }
-        Debug.Log("ook");
+
     }
 }
 
