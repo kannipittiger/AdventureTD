@@ -31,7 +31,7 @@ public class Gunner : MonoBehaviour
             FindTarget();
             return;
         }
-        RotateTowardsTarget();
+        //RotateTowardsTarget();
         //anim.SetBool("area", true);
         timeUntilFire += Time.deltaTime;
 
@@ -60,32 +60,60 @@ public class Gunner : MonoBehaviour
     }
 
     private void LineAttack(){
-        if (target == null) return;
+    if (target == null) return;
 
-        // Calculate the direction from firing point to the target
-        Vector2 directionToTarget = (target.position - firingPoint.position).normalized;
+    // Calculate the direction from firing point to the target
+    Vector2 directionToTarget = (target.position - firingPoint.position).normalized;
 
-        // Determine the center of the boxcast along this direction
-        Vector2 boxCenter = (Vector2)firingPoint.position + directionToTarget * (lineAttackRange / 2);
+    // Rotate the animation according to the attack direction
+    SetAnimationDirection(directionToTarget);
 
-        // Perform the box cast to detect enemies in line attack range
-        RaycastHit2D[] hits = Physics2D.BoxCastAll(
-            boxCenter, 
-            new Vector2(lineAttackRange, lineAttackWidth), 
-            Vector2.SignedAngle(Vector2.right, directionToTarget), // Rotate box towards target
-            Vector2.zero, 
-            0f, 
-            enemyMask
-        );
+    // Determine the center of the boxcast along this direction
+    Vector2 boxCenter = (Vector2)firingPoint.position + directionToTarget * (lineAttackRange / 2);
 
-        foreach (var hit in hits) {
-            // Apply damage to each enemy hit in the line
-            Health enemy = hit.transform.GetComponent<Health>(); // Assuming each enemy has a Health component
-            if (enemy != null) {
-                enemy.TakeDamage(damage); // Call a method to apply damage to the enemy
-            }
+    // Perform the box cast to detect enemies in line attack range
+    RaycastHit2D[] hits = Physics2D.BoxCastAll(
+        boxCenter, 
+        new Vector2(lineAttackRange, lineAttackWidth), 
+        Vector2.SignedAngle(Vector2.right, directionToTarget), // Rotate box towards target
+        Vector2.zero, 
+        0f, 
+        enemyMask
+    );
+
+    foreach (var hit in hits) {
+        // Apply damage to each enemy hit in the line
+        Health enemy = hit.transform.GetComponent<Health>(); // Assuming each enemy has a Health component
+        if (enemy != null) {
+            enemy.TakeDamage(damage); // Call a method to apply damage to the enemy
         }
     }
+}
+
+// Method to set animation direction based on attack direction
+private void SetAnimationDirection(Vector2 direction) {
+    // Reset all direction triggers by calling a dummy trigger if needed (depends on Animator setup)
+    // animator.ResetTrigger("TriggerLeft");
+    // animator.ResetTrigger("TriggerRight");
+    // animator.ResetTrigger("TriggerUp");
+    // animator.ResetTrigger("TriggerDown");
+
+    // Set the correct trigger based on the direction
+    if (Mathf.Abs(direction.x) > Mathf.Abs(direction.y)) {
+        if (direction.x < 0) {
+            anim.SetTrigger("left");
+        } else {
+            anim.SetTrigger("right");
+        }
+    } else {
+        if (direction.y < 0) {
+            anim.SetTrigger("down");
+        } else {
+            anim.SetTrigger("up");
+        }
+    }
+}
+
 
     private bool CheckTargetIsInRange(){
         return target != null && Vector2.Distance(target.position, transform.position) <= targetingRange;
@@ -107,15 +135,15 @@ public class Gunner : MonoBehaviour
         }
     }
     
-    private void RotateTowardsTarget(){
-        Vector3 scale = heroRotationPoint.localScale;
-        if (target.position.x < transform.position.x && scale.x > 0) {
-            scale.x = -scale.x;
-        } else if (target.position.x > transform.position.x && scale.x < 0) {
-            scale.x = -scale.x;
-        }
-        heroRotationPoint.localScale = scale;
-    }   
+    // private void RotateTowardsTarget(){
+    //     Vector3 scale = heroRotationPoint.localScale;
+    //     if (target.position.x < transform.position.x && scale.x > 0) {
+    //         scale.x = -scale.x;
+    //     } else if (target.position.x > transform.position.x && scale.x < 0) {
+    //         scale.x = -scale.x;
+    //     }
+    //     heroRotationPoint.localScale = scale;
+    // }   
 
     #if UNITY_EDITOR
     private void OnDrawGizmosSelected(){
