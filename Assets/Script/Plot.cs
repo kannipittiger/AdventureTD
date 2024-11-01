@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Plot : MonoBehaviour
 {
@@ -24,17 +25,23 @@ public class Plot : MonoBehaviour
     }
 
     private void OnMouseDown(){
-        if(tower != null) return;
+        if (tower != null) return;
+
         Tower towerToBuild = BuildManager.main.GetSelectedTower();
-        if(towerToBuild.cost > LevelManager.main.currency){
+        
+        if (towerToBuild.cost > LevelManager.main.currency){
             Debug.Log("You can't afford this tower");
+            StartCoroutine(LevelManager.main.NoMoneyText("You don't have enough money"));
             return;
         }
+
         if (!BuildManager.main.CanPlaceSelectedTower())
         {
-        Debug.Log("Max placement limit reached for this tower type!");
-        return;
+            Debug.Log("Max placement limit reached for this tower type!");
+            StartCoroutine(LevelManager.main.MaxPlaceText("Hero reached maximum placement"));
+            return;
         }
+
         LevelManager.main.SpendCurrency(towerToBuild.cost);
         tower = Instantiate(towerToBuild.prefab, transform.position, Quaternion.identity);
         BuildManager.main.RegisterTowerPlacement();
