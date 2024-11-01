@@ -27,12 +27,12 @@ public class Gunner : MonoBehaviour
         anim = GetComponent<Animator>();
 
         if (target == null || !CheckTargetIsInRange()){
-            anim.SetBool("area", false);
+            //anim.SetBool("area", false);
             FindTarget();
             return;
         }
         RotateTowardsTarget();
-        anim.SetBool("area", true);
+        //anim.SetBool("area", true);
         timeUntilFire += Time.deltaTime;
 
         if(timeUntilFire >= 1f / aps){

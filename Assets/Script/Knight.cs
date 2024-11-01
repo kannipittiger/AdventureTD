@@ -12,6 +12,7 @@ public class Knight : MonoBehaviour
     [SerializeField] private LayerMask enemyMask;
     // [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform firingPoint;
+    [SerializeField] private AudioClip swordSound;
 
     [Header("Attributes")]
     [SerializeField] private float targetingRange = 5f;
@@ -37,7 +38,7 @@ public class Knight : MonoBehaviour
             anim.SetBool("right", false);
             return;
         }
-        RotateTowardsTarget();
+        
         timeUntilFire += Time.deltaTime;
 
         if (timeUntilFire >= 1f / aps)
@@ -46,8 +47,12 @@ public class Knight : MonoBehaviour
             {
                 if (CheckTargetIsInRange(target))
                 {
+                    
                     Shoot(target);  // Shoot all targets in range
+                    RotateTowardsTarget();
+                    SoundManager.instance.PlaySound(swordSound);
                 }
+                
             }
             timeUntilFire = 0f;
         }
@@ -59,6 +64,7 @@ public class Knight : MonoBehaviour
         Health targetHealth = target.GetComponent<Health>();
         if (targetHealth != null)
         {
+            
             targetHealth.TakeDamage(damage);
         }
     }
@@ -84,7 +90,7 @@ public class Knight : MonoBehaviour
 
     private void RotateTowardsTarget()
 {
-    if (targets.Count == 0) return;
+    
 
     Transform closestTarget = targets[0];
 
@@ -101,18 +107,20 @@ public class Knight : MonoBehaviour
         if (closestTarget.position.x < transform.position.x)
         {
             // enemy อยู่ด้านซ้าย
-            anim.SetBool("up", false);
-    anim.SetBool("down", false);
-    anim.SetBool("left", true);
-    anim.SetBool("right", false);
+            // anim.SetBool("up", false);
+            // anim.SetBool("down", false);
+            // anim.SetBool("left", true);
+            // anim.SetBool("right", false);
+            anim.SetTrigger("lleft");
         }
         else
         {
             // enemy อยู่ด้านขวา
-            anim.SetBool("up", false);
-    anim.SetBool("down", false);
-    anim.SetBool("left", false);
-    anim.SetBool("right", true);
+            // anim.SetBool("up", false);
+            // anim.SetBool("down", false);
+            // anim.SetBool("left", false);
+            // anim.SetBool("right", true);
+            anim.SetTrigger("rright");
         }
     }
     else
@@ -121,19 +129,22 @@ public class Knight : MonoBehaviour
         if (closestTarget.position.y < transform.position.y)
         {
             // enemy อยู่ด้านล่าง
-            anim.SetBool("up", false);
-    anim.SetBool("down", true);
-    anim.SetBool("left", false);
-    anim.SetBool("right", false);
+            // anim.SetBool("up", false);
+            // anim.SetBool("down", true);
+            // anim.SetBool("left", false);
+            // anim.SetBool("right", false);
+            anim.SetTrigger("ddown");
         }
         else
         {
             // enemy อยู่ด้านบน
-            anim.SetBool("up", true);
-    anim.SetBool("down", false);
-    anim.SetBool("left", false);
-    anim.SetBool("right", false);
+            // anim.SetBool("up", true);
+            // anim.SetBool("down", false);
+            // anim.SetBool("left", false);
+            // anim.SetBool("right", false);
+            anim.SetTrigger("aup");
         }
+        Debug.Log("ook");
     }
 }
 
