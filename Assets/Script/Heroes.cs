@@ -49,6 +49,15 @@ public class Heroes : MonoBehaviour
         GameObject bulletObj = Instantiate(bulletPrefab, firingPoint.position, Quaternion.identity);
         Bullet bulletScript = bulletObj.GetComponent<Bullet>();
         bulletScript.SetTarget(target);
+        Rigidbody2D bulletRb = bulletObj.GetComponent<Rigidbody2D>();
+
+            // Calculate direction to target
+        Vector2 direction = (target.position - firingPoint.position).normalized;
+        bulletRb.velocity = direction * 10f; // Adjust bullet speed as needed
+
+        if (bulletScript != null) {
+            bulletScript.Initialize(targetingRange);
+        }
     }
     private bool CheckTargetIsInRange(){
         return Vector2.Distance(target.position,transform.position) <= targetingRange;
