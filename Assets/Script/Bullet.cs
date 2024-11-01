@@ -12,7 +12,8 @@ public class Bullet : MonoBehaviour
     [SerializeField] private float bulletSpeed = 5f;
     [SerializeField] private int bulletDamage = 1;
     private Transform target;
-
+    private Vector3 spawnPosition;
+    private float maxRange;
     // เพิ่มตัวแปรสำหรับ Animator
     private Animator anim;
 
@@ -28,7 +29,20 @@ public class Bullet : MonoBehaviour
             // Debug.Log("ihere");
         }
     }
-
+    public void Initialize(float range)
+    {
+        // Set the initial position and range when the bullet is created
+        spawnPosition = transform.position;
+        maxRange = range;
+    }
+    private void Update()
+    {
+        // Check if the bullet has exceeded its maximum range
+        if (Vector3.Distance(spawnPosition, transform.position) >= maxRange)
+        {
+            Destroy(gameObject);
+        }
+    }
     public void SetTarget(Transform _target){
         target = _target;
     }
