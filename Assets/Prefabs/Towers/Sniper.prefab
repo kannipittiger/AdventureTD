@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1097987249535493498}
   - component: {fileID: 7112217617209378645}
-  - component: {fileID: -6305267979446672227}
   - component: {fileID: 5124229986380423551}
   - component: {fileID: 7519910628854476051}
   m_Layer: 0
@@ -35,6 +34,7 @@ Transform:
   m_Children:
   - {fileID: 4701704244638638385}
   - {fileID: 3297565384605025315}
+  - {fileID: 7338719176431509421}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7112217617209378645
@@ -55,29 +55,11 @@ MonoBehaviour:
     m_Bits: 64
   bulletPrefab: {fileID: 5985117446669051058, guid: c81def9970d3da649ad85e8ab7ebe5c1, type: 3}
   firingPoint: {fileID: 3297565384605025315}
-  targetingRange: 5
-  aps: 2
---- !u!114 &-6305267979446672227
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 466516421196534547}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e015a6b771ee564a8250a82d24ae08d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  heroRotationPoint: {fileID: 0}
-  enemyMask:
-    serializedVersion: 2
-    m_Bits: 64
-  bulletPrefab: {fileID: 5985117446669051058, guid: 5684990b69df9a646a8394c0da2a3d16, type: 3}
-  firingPoint: {fileID: 0}
-  targetingRange: 2
-  aps: 0.5
-  freezeTime: 1
+  rangeObject: {fileID: 7338719176431509421}
+  lineAttackRange: 8
+  lineAttackWidth: 1
+  aps: 1
+  damage: 100
 --- !u!95 &5124229986380423551
 Animator:
   serializedVersion: 5
@@ -88,7 +70,7 @@ Animator:
   m_GameObject: {fileID: 466516421196534547}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ee81799e4ee845144825a33197b01e5e, type: 2}
+  m_Controller: {fileID: 9100000, guid: dc9383c9f0daef5448a72027ed93debb, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -140,7 +122,7 @@ SpriteRenderer:
   m_SortingLayerID: 1195195389
   m_SortingLayer: 8
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7163034264491450569, guid: 90c564741fb7e8a4098a6847e1dec155, type: 3}
+  m_Sprite: {fileID: 630275614, guid: 4b89774225ad67a439bc32cb9c1029ab, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -266,3 +248,65 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &8982286462486422563
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1097987249535493498}
+    m_Modifications:
+    - target: {fileID: 1837226514802916238, guid: c99896530483a4a48aa30303251598c8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.010000229
+      objectReference: {fileID: 0}
+    - target: {fileID: 1837226514802916238, guid: c99896530483a4a48aa30303251598c8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.03999996
+      objectReference: {fileID: 0}
+    - target: {fileID: 1837226514802916238, guid: c99896530483a4a48aa30303251598c8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.020918729
+      objectReference: {fileID: 0}
+    - target: {fileID: 1837226514802916238, guid: c99896530483a4a48aa30303251598c8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1837226514802916238, guid: c99896530483a4a48aa30303251598c8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1837226514802916238, guid: c99896530483a4a48aa30303251598c8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1837226514802916238, guid: c99896530483a4a48aa30303251598c8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1837226514802916238, guid: c99896530483a4a48aa30303251598c8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1837226514802916238, guid: c99896530483a4a48aa30303251598c8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1837226514802916238, guid: c99896530483a4a48aa30303251598c8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2756279649604818747, guid: c99896530483a4a48aa30303251598c8, type: 3}
+      propertyPath: m_Name
+      value: SniperRange
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c99896530483a4a48aa30303251598c8, type: 3}
+--- !u!4 &7338719176431509421 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1837226514802916238, guid: c99896530483a4a48aa30303251598c8, type: 3}
+  m_PrefabInstance: {fileID: 8982286462486422563}
+  m_PrefabAsset: {fileID: 0}
