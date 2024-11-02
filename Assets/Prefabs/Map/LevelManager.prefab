@@ -1,0 +1,119 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7171344966620879901
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5819326765668842090}
+  - component: {fileID: 3833951850320942506}
+  - component: {fileID: 5720598996179721110}
+  - component: {fileID: 5759564075641954512}
+  m_Layer: 0
+  m_Name: LevelManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5819326765668842090
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7171344966620879901}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.198537, y: -2.404008, z: 0.0051363325}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3833951850320942506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7171344966620879901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62185ce35010d3b4ba95c4488a7cebcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MoneyText: {fileID: 0}
+  MaxPlacedText: {fileID: 0}
+  startPoint: {fileID: 0}
+  path:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  currency: 0
+--- !u!114 &5720598996179721110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7171344966620879901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb6e5629c7d3bce4eb9d45ba9646e193, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPrefabs:
+  - {fileID: 5231200815768558115, guid: 7ff018ac3f43dff44b756f1b1a8286b0, type: 3}
+  - {fileID: 5259146254566185522, guid: 4a5d10b1951f7104582e21ccc71dea1e, type: 3}
+  - {fileID: 1397267847681181789, guid: ea7e7dbd58711e94ea4b2f6bf5f7111e, type: 3}
+  - {fileID: 7535645226393618477, guid: 1e2aa3cb4f033074a8f7e98ae58f3014, type: 3}
+  waveText: {fileID: 0}
+  baseEnemies: 6
+  enemiesPerSecond: 1
+  timeBetweenWaves: 5
+  difficultlyScalingFactor: 0.75
+  baseEnemyHealth: 30
+  baseEnemySpeed: 2
+  baseMoney: 50
+  enemiesPerSecondCap: 15
+--- !u!114 &5759564075641954512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7171344966620879901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d38d8538fc84974c930166f12732d5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towers:
+  - name: Fire Wizard
+    cost: 100
+    prefab: {fileID: 5061941844918846878, guid: 59b67711bfa01f44196f1ed8d96aeeec, type: 3}
+    maxPlacement: 3
+  - name: Ice Wizard
+    cost: 300
+    prefab: {fileID: 1740478736659748653, guid: c34ce8f0f300b134c947f0966f132433, type: 3}
+    maxPlacement: 4
+  - name: Knight
+    cost: 200
+    prefab: {fileID: 2059366310813724620, guid: 73da51fe3edb87c48ad9c2eb0372f761, type: 3}
+    maxPlacement: 4
+  - name: Sniper
+    cost: 500
+    prefab: {fileID: 466516421196534547, guid: 4a8fa8fe4ca68f049b2f2d743d7f35a4, type: 3}
+    maxPlacement: 3
