@@ -13,19 +13,21 @@ public class Knight : MonoBehaviour
     // [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform firingPoint;
     [SerializeField] private AudioClip swordSound;
+    [SerializeField] private Transform rangeObject; // Reference to the Range GameObject
 
     [Header("Attributes")]
-    [SerializeField] private float targetingRange = 5f;
     [SerializeField] private float aps = 1f;
     [SerializeField] private int damage = 50; // Damage dealt per shot
 
     private List<Transform> targets = new List<Transform>();
     private float timeUntilFire;
+    private float targetingRange;
 
     private Animator anim;
 
     private void Update()
     {
+        targetingRange = Mathf.Max(rangeObject.localScale.x, rangeObject.localScale.y) / 2f;
         anim = GetComponent<Animator>();
 
         FindTargets();  // Check for all enemies within range
@@ -38,7 +40,7 @@ public class Knight : MonoBehaviour
             anim.SetBool("right", false);
             return;
         }
-        
+
         timeUntilFire += Time.deltaTime;
 
         if (timeUntilFire >= 1f / aps)
@@ -50,9 +52,9 @@ public class Knight : MonoBehaviour
                     RotateTowardsTarget();
                     Shoot(target);  // Shoot all targets in range
                     SoundManager.instance.PlaySound(swordSound);
-                    
+
                 }
-                
+
             }
             timeUntilFire = 0f;
         }
@@ -64,7 +66,7 @@ public class Knight : MonoBehaviour
         Health targetHealth = target.GetComponent<Health>();
         if (targetHealth != null)
         {
-            
+
             targetHealth.TakeDamage(damage);
         }
     }
@@ -89,75 +91,75 @@ public class Knight : MonoBehaviour
     }
 
     private void RotateTowardsTarget()
-{
-    
-
-    Transform closestTarget = targets[0];
-
-    // รีเซ็ตค่าแอนิเมชันทั้งหมดก่อนตั้งค่าใหม่
-    anim.SetBool("up", false);
-    anim.SetBool("down", false);
-    anim.SetBool("left", false);
-    anim.SetBool("right", false);
-
-    // ตรวจสอบตำแหน่งของ enemy เพื่อกำหนดทิศทาง
-    if (Mathf.Abs(closestTarget.position.x - transform.position.x) > Mathf.Abs(closestTarget.position.y - transform.position.y))
     {
-        // enemy อยู่ในแนวนอน
-        if (closestTarget.position.x < transform.position.x)
+
+
+        Transform closestTarget = targets[0];
+
+        // รีเซ็ตค่าแอนิเมชันทั้งหมดก่อนตั้งค่าใหม่
+        anim.SetBool("up", false);
+        anim.SetBool("down", false);
+        anim.SetBool("left", false);
+        anim.SetBool("right", false);
+
+        // ตรวจสอบตำแหน่งของ enemy เพื่อกำหนดทิศทาง
+        if (Mathf.Abs(closestTarget.position.x - transform.position.x) > Mathf.Abs(closestTarget.position.y - transform.position.y))
         {
-            // enemy อยู่ด้านซ้าย
-            // anim.SetBool("up", false);
-            // anim.SetBool("down", false);
-            // anim.SetBool("left", true);
-            // anim.SetBool("right", false);
-            anim.SetTrigger("lleft");
-            
+            // enemy อยู่ในแนวนอน
+            if (closestTarget.position.x < transform.position.x)
+            {
+                // enemy อยู่ด้านซ้าย
+                // anim.SetBool("up", false);
+                // anim.SetBool("down", false);
+                // anim.SetBool("left", true);
+                // anim.SetBool("right", false);
+                anim.SetTrigger("lleft");
+
+            }
+            else
+            {
+                // enemy อยู่ด้านขวา
+                // anim.SetBool("up", false);
+                // anim.SetBool("down", false);
+                // anim.SetBool("left", false);
+                // anim.SetBool("right", true);
+                anim.SetTrigger("rright");
+
+            }
         }
         else
         {
-            // enemy อยู่ด้านขวา
-            // anim.SetBool("up", false);
-            // anim.SetBool("down", false);
-            // anim.SetBool("left", false);
-            // anim.SetBool("right", true);
-            anim.SetTrigger("rright");
-            
-        }
-    }
-    else
-    {
-        // enemy อยู่ในแนวตั้ง
-        if (closestTarget.position.y < transform.position.y)
-        {
-            // enemy อยู่ด้านล่าง
-            // anim.SetBool("up", false);
-            // anim.SetBool("down", true);
-            // anim.SetBool("left", false);
-            // anim.SetBool("right", false);
-            anim.SetTrigger("ddown");
-            
-        }
-        else
-        {
-            // enemy อยู่ด้านบน
-            // anim.SetBool("up", true);
-            // anim.SetBool("down", false);
-            // anim.SetBool("left", false);
-            // anim.SetBool("right", false);
-            anim.SetTrigger("aup");
-            
-        }
+            // enemy อยู่ในแนวตั้ง
+            if (closestTarget.position.y < transform.position.y)
+            {
+                // enemy อยู่ด้านล่าง
+                // anim.SetBool("up", false);
+                // anim.SetBool("down", true);
+                // anim.SetBool("left", false);
+                // anim.SetBool("right", false);
+                anim.SetTrigger("ddown");
 
-    }
-}
+            }
+            else
+            {
+                // enemy อยู่ด้านบน
+                // anim.SetBool("up", true);
+                // anim.SetBool("down", false);
+                // anim.SetBool("left", false);
+                // anim.SetBool("right", false);
+                anim.SetTrigger("aup");
 
-    #if UNITY_EDITOR
-    private void OnDrawGizmosSelected()
-    {
-        Handles.color = Color.cyan;
-        Handles.DrawWireDisc(transform.position, transform.forward, targetingRange);
+            }
+
+        }
     }
-    #endif
+
+    // #if UNITY_EDITOR
+    //     private void OnDrawGizmosSelected()
+    //     {
+    //         Handles.color = Color.cyan;
+    //         Handles.DrawWireDisc(transform.position, transform.forward, targetingRange);
+    //     }
+    // #endif
 }
 

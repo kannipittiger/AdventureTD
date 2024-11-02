@@ -11,9 +11,9 @@ public class Gunner : MonoBehaviour
     [SerializeField] private LayerMask enemyMask;
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform firingPoint;
+    [SerializeField] private Transform rangeObject; // Reference to the Range GameObject
 
     [Header("Attributes")]
-    [SerializeField] private float targetingRange = 5f;
     [SerializeField] private float lineAttackRange = 5f; // Line attack range distance
     [SerializeField] private float lineAttackWidth = 1f; // Width of the line attack
     [SerializeField] private float aps = 1f;
@@ -21,11 +21,12 @@ public class Gunner : MonoBehaviour
 
     private Transform target;
     private float timeUntilFire;
+    private float targetingRange;
     Animator anim;
 
     private void Update(){
         anim = GetComponent<Animator>();
-
+        targetingRange = Mathf.Max(rangeObject.localScale.x, rangeObject.localScale.y) / 2f;
         if (target == null || !CheckTargetIsInRange()){
             //anim.SetBool("area", false);
             FindTarget();
