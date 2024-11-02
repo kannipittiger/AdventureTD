@@ -34,6 +34,7 @@ Transform:
   m_Children:
   - {fileID: 4701704244638638385}
   - {fileID: 3297565384605025315}
+  - {fileID: 7338719176431509421}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7112217617209378645
@@ -252,3 +253,65 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &8982286462486422563
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1097987249535493498}
+    m_Modifications:
+    - target: {fileID: 1837226514802916238, guid: c99896530483a4a48aa30303251598c8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.010000229
+      objectReference: {fileID: 0}
+    - target: {fileID: 1837226514802916238, guid: c99896530483a4a48aa30303251598c8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.03999996
+      objectReference: {fileID: 0}
+    - target: {fileID: 1837226514802916238, guid: c99896530483a4a48aa30303251598c8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.020918729
+      objectReference: {fileID: 0}
+    - target: {fileID: 1837226514802916238, guid: c99896530483a4a48aa30303251598c8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1837226514802916238, guid: c99896530483a4a48aa30303251598c8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1837226514802916238, guid: c99896530483a4a48aa30303251598c8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1837226514802916238, guid: c99896530483a4a48aa30303251598c8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1837226514802916238, guid: c99896530483a4a48aa30303251598c8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1837226514802916238, guid: c99896530483a4a48aa30303251598c8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1837226514802916238, guid: c99896530483a4a48aa30303251598c8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2756279649604818747, guid: c99896530483a4a48aa30303251598c8, type: 3}
+      propertyPath: m_Name
+      value: SniperRange
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c99896530483a4a48aa30303251598c8, type: 3}
+--- !u!4 &7338719176431509421 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1837226514802916238, guid: c99896530483a4a48aa30303251598c8, type: 3}
+  m_PrefabInstance: {fileID: 8982286462486422563}
+  m_PrefabAsset: {fileID: 0}

@@ -25,14 +25,15 @@ public class Gunner : MonoBehaviour
 
     private Transform target;
     private float timeUntilFire;
+    private float targetingRange;
     Animator anim;
 
     private void Update()
     {
         anim = GetComponent<Animator>();
-
-        if (target == null || !CheckTargetIsInRange())
-        {
+        targetingRange = Mathf.Max(rangeObject.localScale.x, rangeObject.localScale.y) / 2f;
+        if (target == null || !CheckTargetIsInRange()){
+            //anim.SetBool("area", false);
             FindTarget();
             return;
         }
