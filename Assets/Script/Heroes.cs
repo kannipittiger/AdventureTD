@@ -11,6 +11,7 @@ public class Heroes : MonoBehaviour
     [SerializeField] private LayerMask enemyMask;
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform firingPoint;
+    [SerializeField] private AudioClip fireSound;
 
     [Header("Attribute")]
     [SerializeField] private float targetingRange = 5f;
@@ -58,6 +59,7 @@ public class Heroes : MonoBehaviour
         if (bulletScript != null) {
             bulletScript.Initialize(targetingRange);
         }
+        SoundManager.instance.PlaySound(fireSound);
     }
     private bool CheckTargetIsInRange(){
         return Vector2.Distance(target.position,transform.position) <= targetingRange;

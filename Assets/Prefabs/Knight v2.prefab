@@ -168,6 +168,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   firingPoint: {fileID: 6789907097929578894}
+  swordSound: {fileID: 8300000, guid: dda8ba81483c50049bd5fc99a52402e0, type: 3}
   targetingRange: 5
   aps: 0.5
   damage: 50

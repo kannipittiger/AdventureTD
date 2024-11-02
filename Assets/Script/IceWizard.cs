@@ -11,6 +11,7 @@ public class IceWizard : MonoBehaviour
     [SerializeField] private LayerMask enemyMask;
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform firingPoint;
+    [SerializeField] private AudioClip iceSound;
 
     [Header("Attribute")]
     [SerializeField] private float targetingRange = 5f;
@@ -37,6 +38,7 @@ public class IceWizard : MonoBehaviour
             timeUntilFire += Time.deltaTime;
             if(timeUntilFire >= 1f/aps){
                 Shoot();
+                
                 FreezeEnemies();
                 anim.SetBool ("area", true);
                 timeUntilFire = 0f;
@@ -46,7 +48,7 @@ public class IceWizard : MonoBehaviour
 
     private void Shoot(){
         GameObject bulletObj = Instantiate(bulletPrefab, firingPoint.position, Quaternion.identity);
-        Bullet bulletScript = bulletObj.GetComponent<Bullet>();
+        BlueFireball bulletScript = bulletObj.GetComponent<BlueFireball>();
         bulletScript.SetTarget(target);
         Rigidbody2D bulletRb = bulletObj.GetComponent<Rigidbody2D>();
 
@@ -67,8 +69,10 @@ public class IceWizard : MonoBehaviour
                 EnemyMovement em = hit.transform.GetComponent<EnemyMovement>();
                 em.UpdateSpeed(0.5f);
                 StartCoroutine(ResetEnemySpeed(em));
+                SoundManager.instance.PlaySound(iceSound);
             }
         }
+        
     }
     private bool CheckTargetIsInRange(){
         return Vector2.Distance(target.position,transform.position) <= targetingRange;
@@ -96,6 +100,7 @@ public class IceWizard : MonoBehaviour
     private IEnumerator ResetEnemySpeed(EnemyMovement em){
         yield return new WaitForSeconds(freezeTime);
         em.ResetSpeed();
+        
     }
 
     #if UNITY_EDITOR

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class BlueFireball : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private Rigidbody2D rb;
@@ -48,21 +48,12 @@ public class Bullet : MonoBehaviour
     }
 
     public void FixedUpdate(){
-    if (!target) return;
+        if (!target) return;
 
-    Vector2 direction = (target.position - transform.position).normalized;
-    rb.velocity = direction * bulletSpeed;
-
-    // หมุนกระสุนเรื่อยๆ
-    RotateBullet();
-}
-
-// ฟังก์ชันสำหรับการหมุนกระสุน
-private void RotateBullet() {
-    // เพิ่มการหมุนที่ต้องการ
-    transform.Rotate(0f, 0f, 360f * Time.fixedDeltaTime); // หมุน 360 องศาต่อวินาที
-}
-
+        Vector2 direction = (target.position - transform.position).normalized;
+        rb.velocity = direction * bulletSpeed;
+        RotateTowardsTarget();
+    }
 
     private void OnCollisionEnter2D(Collision2D other)
     {

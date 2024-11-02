@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1097987249535493498}
   - component: {fileID: 7112217617209378645}
-  - component: {fileID: -6305267979446672227}
   - component: {fileID: 5124229986380423551}
   - component: {fileID: 7519910628854476051}
   m_Layer: 0
@@ -53,31 +52,18 @@ MonoBehaviour:
   enemyMask:
     serializedVersion: 2
     m_Bits: 64
-  bulletPrefab: {fileID: 5985117446669051058, guid: c81def9970d3da649ad85e8ab7ebe5c1, type: 3}
+  bulletPrefab: {fileID: 2289750780908232284, guid: 2faf73131e5dd9d43a68b1b18fd40b9a, type: 3}
   firingPoint: {fileID: 3297565384605025315}
-  targetingRange: 5
-  aps: 2
---- !u!114 &-6305267979446672227
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 466516421196534547}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e015a6b771ee564a8250a82d24ae08d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  heroRotationPoint: {fileID: 0}
-  enemyMask:
-    serializedVersion: 2
-    m_Bits: 64
-  bulletPrefab: {fileID: 5985117446669051058, guid: 5684990b69df9a646a8394c0da2a3d16, type: 3}
-  firingPoint: {fileID: 0}
-  targetingRange: 2
-  aps: 0.5
-  freezeTime: 1
+  gunSound: {fileID: 8300000, guid: a0a9f11ef9ec6b8409db4494b430593e, type: 3}
+  targetingRange: 8
+  lineAttackRange: 8
+  lineAttackWidth: 1
+  aps: 1
+  damage: 100
+  offsetLeft: {x: -1, y: 0}
+  offsetRight: {x: 1, y: 0}
+  offsetUp: {x: 0, y: 1}
+  offsetDown: {x: 0, y: -1}
 --- !u!95 &5124229986380423551
 Animator:
   serializedVersion: 5
@@ -88,7 +74,7 @@ Animator:
   m_GameObject: {fileID: 466516421196534547}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ee81799e4ee845144825a33197b01e5e, type: 2}
+  m_Controller: {fileID: 9100000, guid: dc9383c9f0daef5448a72027ed93debb, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -140,7 +126,7 @@ SpriteRenderer:
   m_SortingLayerID: 1195195389
   m_SortingLayer: 8
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7163034264491450569, guid: 90c564741fb7e8a4098a6847e1dec155, type: 3}
+  m_Sprite: {fileID: 630275614, guid: 4b89774225ad67a439bc32cb9c1029ab, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -176,7 +162,7 @@ Transform:
   m_GameObject: {fileID: 2017550393038117570}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.56, y: 0.22, z: 0.024733765}
+  m_LocalPosition: {x: -0.05, y: -0.15, z: 0.024733765}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
