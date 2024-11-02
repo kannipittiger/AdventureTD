@@ -7,15 +7,18 @@ public class Bullet : MonoBehaviour
     [Header("References")]
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform bulletRotationPoint;
-    
+
     [Header("Attributes")]
     [SerializeField] private float bulletSpeed = 5f;
-    [SerializeField] private int bulletDamage = 1;
+
     private Transform target;
     private Vector3 spawnPosition;
     private float maxRange;
     // เพิ่มตัวแปรสำหรับ Animator
     private Animator anim;
+
+    private int damage = 30;
+    private int currentDamage;
 
     private void Start()
     {
@@ -25,9 +28,14 @@ public class Bullet : MonoBehaviour
         {
             // Debug.Log("isus");
         }
-        else{
+        else
+        {
             // Debug.Log("ihere");
         }
+    }
+    public void SetDamage(int heroDamage)
+    {
+        damage = heroDamage;
     }
     public void Initialize(float range)
     {
@@ -43,49 +51,43 @@ public class Bullet : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    public void SetTarget(Transform _target){
+    public void SetTarget(Transform _target)
+    {
         target = _target;
     }
 
-    public void FixedUpdate(){
-    if (!target) return;
+    public void FixedUpdate()
+    {
+        if (!target) return;
 
-    Vector2 direction = (target.position - transform.position).normalized;
-    rb.velocity = direction * bulletSpeed;
-
-    // หมุนกระสุนเรื่อยๆ
-    RotateBullet();
-}
-
-// ฟังก์ชันสำหรับการหมุนกระสุน
-private void RotateBullet() {
-    // เพิ่มการหมุนที่ต้องการ
-    transform.Rotate(0f, 0f, 360f * Time.fixedDeltaTime); // หมุน 360 องศาต่อวินาที
-}
-
+        Vector2 direction = (target.position - transform.position).normalized;
+        rb.velocity = direction * bulletSpeed;
+        RotateTowardsTarget();
+    }
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-    // ลดพลังชีวิตของศัตรูเมื่อชน
-    other.gameObject.GetComponent<Health>().TakeDamage(bulletDamage);
+        // currentDamage = Mathf.RoundToInt(hero.damage);
+        // ลดพลังชีวิตของศัตรูเมื่อชน
+        other.gameObject.GetComponent<Health>().TakeDamage(damage);
 
-    // หยุดการเคลื่อนที่ของกระสุน
-    rb.velocity = Vector2.zero;  // หยุดการเคลื่อนที่
-    rb.isKinematic = true; // ตั้งค่า Rigidbody เป็น Kinematic เพื่อหยุดการฟิสิกส์
+        // หยุดการเคลื่อนที่ของกระสุน
+        rb.velocity = Vector2.zero;  // หยุดการเคลื่อนที่
+        rb.isKinematic = true; // ตั้งค่า Rigidbody เป็น Kinematic เพื่อหยุดการฟิสิกส์
 
-    // เล่นแอนิเมชันชน (Hit Animation)
-    if (anim != null)
-    {
-        anim.SetTrigger("hit"); // เปลี่ยน Trigger เป็น "Hit"
-        // Debug.Log("teedon");
-    }
-    else
-    {
-        // Debug.Log("eiei");
-    }
+        // เล่นแอนิเมชันชน (Hit Animation)
+        if (anim != null)
+        {
+            anim.SetTrigger("hit"); // เปลี่ยน Trigger เป็น "Hit"
+                                    // Debug.Log("teedon");
+        }
+        else
+        {
+            // Debug.Log("eiei");
+        }
 
-    // เรียกใช้ Coroutine เพื่อรอให้แอนิเมชันเล่นเสร็จ
-    StartCoroutine(DestroyAfterAnimation());
+        // เรียกใช้ Coroutine เพื่อรอให้แอนิเมชันเล่นเสร็จ
+        StartCoroutine(DestroyAfterAnimation());
     }
 
     private IEnumerator DestroyAfterAnimation()
@@ -98,11 +100,15 @@ private void RotateBullet() {
     }
 
 
-    private void RotateTowardsTarget(){
+    private void RotateTowardsTarget()
+    {
         Vector3 scale = bulletRotationPoint.localScale;
-        if (target.position.x < transform.position.x && scale.x > 0) {
+        if (target.position.x < transform.position.x && scale.x > 0)
+        {
             scale.x = -scale.x;
-        } else if (target.position.x > transform.position.x && scale.x < 0) {
+        }
+        else if (target.position.x > transform.position.x && scale.x < 0)
+        {
             scale.x = -scale.x;
         }
         bulletRotationPoint.localScale = scale;
