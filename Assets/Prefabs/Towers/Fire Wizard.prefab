@@ -171,7 +171,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 5985117446669051058, guid: c81def9970d3da649ad85e8ab7ebe5c1, type: 3}
   firingPoint: {fileID: 1097639215627941940}
   fireSound: {fileID: 8300000, guid: ca62b7c602bbe1540bb4b9effec97c0b, type: 3}
-  targetingRange: 7
+  rangeObject: {fileID: 4554000898106548394}
   aps: 0.5
 --- !u!95 &5746696136205150854
 Animator:

@@ -12,6 +12,7 @@ public class Heroes : MonoBehaviour
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform firingPoint;
     [SerializeField] private AudioClip fireSound;
+    [SerializeField] private Transform rangeObject; // Reference to the Range GameObject
 
     [Header("Attribute")]
 

@@ -9,9 +9,10 @@ public class Gunner : MonoBehaviour
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform firingPoint;
     [SerializeField] private AudioClip gunSound;
+    [SerializeField] private Transform rangeObject; // Reference to the Range GameObject
 
     [Header("Attributes")]
-    [SerializeField] private float targetingRange = 5f;
+ 
     [SerializeField] private float lineAttackRange = 5f;
     [SerializeField] private float lineAttackWidth = 1f;
     [SerializeField] private float aps = 1f;

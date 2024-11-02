@@ -140,7 +140,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 8817024761093783849, guid: 9c17371cc9ee731439512693fee873c1, type: 3}
   firingPoint: {fileID: 6875209243869604707}
   iceSound: {fileID: 8300000, guid: 3923ccf8cd787f14ea87f87d07bfbae6, type: 3}
-  targetingRange: 5
+  rangeObject: {fileID: 3189738455812182055}
   aps: 1
   freezeTime: 1.5
 --- !u!95 &4637937967442481190

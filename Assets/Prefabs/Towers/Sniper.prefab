@@ -56,7 +56,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 2289750780908232284, guid: 2faf73131e5dd9d43a68b1b18fd40b9a, type: 3}
   firingPoint: {fileID: 3297565384605025315}
   gunSound: {fileID: 8300000, guid: a0a9f11ef9ec6b8409db4494b430593e, type: 3}
-  targetingRange: 8
+  rangeObject: {fileID: 7338719176431509421}
   lineAttackRange: 8
   lineAttackWidth: 1
   aps: 1

@@ -12,6 +12,7 @@ public class IceWizard : MonoBehaviour
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform firingPoint;
     [SerializeField] private AudioClip iceSound;
+    [SerializeField] private Transform rangeObject; // Reference to the Range GameObject
 
     [Header("Attribute")]
     [SerializeField] private float aps = 0.5f;
