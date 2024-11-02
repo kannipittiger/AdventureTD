@@ -17,12 +17,50 @@ public class Heroes : MonoBehaviour
     [Header("Attribute")]
 
     [SerializeField] private float aps = 1f;
+    [SerializeField] public float damage = 30f;
+    private HeroUpgrade upgradeUI;
 
+    public float CurrentDamage => damage;
+    public float TargetingRange => targetingRange;
     private Transform target;
     private float timeUntilFire;
-    private float targetingRange;
+    public float targetingRange;
+    private SpriteRenderer spriteRenderer;
     Animator anim;
 
+    private void Start()
+    {
+        // Assuming the HeroUpgradeUI is attached to the Canvas
+        upgradeUI = FindObjectOfType<HeroUpgrade>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        if (spriteRenderer == null)
+        {
+            Debug.LogError("No SpriteRenderer found on the hero.");
+        }
+    }
+    public Sprite GetHeroSprite()
+    {
+        return spriteRenderer != null ? spriteRenderer.sprite : null;
+    }
+
+    private void OnMouseDown()
+    {
+        if (upgradeUI == null)
+        {
+            Debug.LogError("Upgrade UI not assigned.");
+            return;
+        }
+        upgradeUI.Initialize(this);
+        upgradeUI.ToggleUpgradePanel(true);
+    }
+
+    public void UpgradeStats()
+    {
+        damage *= 1.2f;  // Increase damage
+        targetingRange *= 1.1f; // Increase range
+        rangeObject.localScale = new Vector3(targetingRange * 2, targetingRange * 2, rangeObject.localScale.z);
+
+    }
 
     private void Update()
     {
@@ -68,6 +106,7 @@ public class Heroes : MonoBehaviour
         if (bulletScript != null)
         {
             bulletScript.Initialize(targetingRange);
+            bulletScript.SetDamage(Mathf.RoundToInt(damage));
         }
         SoundManager.instance.PlaySound(fireSound);
     }
