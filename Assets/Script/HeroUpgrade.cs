@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System;
+using Unity.VisualScripting;
 
 public class HeroUpgrade : MonoBehaviour
 {
@@ -19,7 +20,6 @@ public class HeroUpgrade : MonoBehaviour
     [SerializeField] private Button upgradeButton;
 
     private Heroes currentHero; 
-    private int currentUpgradeCost = 70;
     private int countUpgrade = 0;
     
 
@@ -64,18 +64,21 @@ public class HeroUpgrade : MonoBehaviour
 
     private void UpdateUpgradeUI()
     {
-        float currentDamage = currentHero.Damage;
+        float currentDamage = currentHero.CurrentDamage;
         float currentRange = currentHero.targetingRange;
+        float currentUpgradeCost = currentHero.UpgradeCost;
         currentRange.ToString("0.00");
         float nextDamage = currentDamage * 1.2f;  // Example increase, adjust as needed
         float nextRange = currentRange * 1.1f;    // Example increase, adjust as needed
-        float nextUpgradeCost = currentUpgradeCost * 1.2f;
+        float nextUpgrade = currentUpgradeCost * 1.2f;
+        
 
         currentDamage = Mathf.RoundToInt(currentDamage);
         currentRange.ToString("0.00");
         nextDamage = Mathf.RoundToInt(nextDamage);
         nextRange.ToString("0.00");
-        currentUpgradeCost = Mathf.RoundToInt(nextUpgradeCost);
+        currentUpgradeCost = Mathf.RoundToInt(nextUpgrade);
+        // nextUpgrade = Mathf.RoundToInt(nextUpgrade);
 
         currentDamageText.text = $"DMG: {currentDamage}";
         currentRangeText.text = $"RNG: {currentRange}";
@@ -91,9 +94,9 @@ public class HeroUpgrade : MonoBehaviour
         {
 
             upgradeButtonText.text = $"Upgrade";
-            if (LevelManager.main.currency >= Mathf.RoundToInt(currentUpgradeCost))
+            if (LevelManager.main.currency >= Mathf.RoundToInt(currentHero.UpgradeCost))
             {
-                LevelManager.main.currency -= Mathf.RoundToInt(currentUpgradeCost);
+                LevelManager.main.currency -= Mathf.RoundToInt(currentHero.UpgradeCost);
                 currentHero.UpgradeStats();
                 countUpgrade++;
                 UpdateUpgradeUI();

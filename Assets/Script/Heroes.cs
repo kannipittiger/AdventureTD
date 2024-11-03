@@ -8,12 +8,14 @@ public class Heroes : MonoBehaviour
     [SerializeField] private Transform rangeObject;
 
     [Header("Attribute")]
-    [SerializeField] protected float aps = 1f; // Attacks per second
+    [SerializeField] protected float aps; // Attacks per second
     [SerializeField] protected float damage; // Base damage
+    [SerializeField] protected float upgradeCost; // Base damage
     public float CurrentDamage => damage; // Current damage (base)
     public float TargetingRange => targetingRange; // Targeting range
-    public float Damage { get; private set; } // Expose Damage as a property
-    public float TargetingRanged { get; private set; } // Possibly a typo? Should be TargetingRange
+    public float UpgradeCost => upgradeCost; // Targeting range
+    // public float Damage { get; private set; } // Expose Damage as a property
+    // public float TargetingRanged { get; private set; } // Possibly a typo? Should be TargetingRange
 
     public float targetingRange; // Field for targeting range
     private SpriteRenderer spriteRenderer;
@@ -30,7 +32,7 @@ public class Heroes : MonoBehaviour
         {
             targetingRange = Mathf.Max(rangeObject.localScale.x, rangeObject.localScale.y) / 2f;
         }
-        Damage = damage; // Initialize the Damage property
+        // Damage = damage; // Initialize the Damage property
     }
 
     public Sprite GetHeroSprite()
@@ -40,9 +42,10 @@ public class Heroes : MonoBehaviour
 
     public void UpgradeStats()
     {
-        damage *= 1.2f; // Increase damage by 20%
+        damage *= 1.3f; // Increase damage by 20%
         targetingRange *= 1.1f; // Increase targeting range by 10%
-        Damage = damage; // Update the Damage property with the new value
+        upgradeCost *= 1.2f;
+        // Damage = damage; // Update the Damage property with the new value
 
         if (rangeObject != null)
         {

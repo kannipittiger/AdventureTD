@@ -29,7 +29,8 @@ public class Knight : Heroes
 
         // Set specific values for Wizard if needed
         aps = 0.5f; // example value
-        damage = 20f; // example value
+        damage = 35f; // example value
+        upgradeCost = 110f;
     }
     private void OnMouseDown()
     {
@@ -84,7 +85,7 @@ public class Knight : Heroes
         if (targetHealth != null)
         {
 
-            targetHealth.TakeDamage(Mathf.RoundToInt(damage));
+            targetHealth.TakeDamage(Mathf.RoundToInt(CurrentDamage));
         }
     }
 
