@@ -106,11 +106,11 @@ MonoBehaviour:
     prefab: {fileID: 5061941844918846878, guid: 59b67711bfa01f44196f1ed8d96aeeec, type: 3}
     maxPlacement: 3
   - name: Ice Wizard
-    cost: 300
+    cost: 200
     prefab: {fileID: 1740478736659748653, guid: c34ce8f0f300b134c947f0966f132433, type: 3}
     maxPlacement: 4
   - name: Knight
-    cost: 200
+    cost: 300
     prefab: {fileID: 2059366310813724620, guid: 73da51fe3edb87c48ad9c2eb0372f761, type: 3}
     maxPlacement: 4
   - name: Sniper
