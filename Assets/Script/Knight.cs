@@ -26,11 +26,13 @@ public class Knight : Heroes
     {
         base.Start(); // Call the base class Start to initialize common properties
         anim = GetComponent<Animator>();
-
+        Tower towerToBuild = BuildManager.main.GetSelectedTower();
         // Set specific values for Wizard if needed
         aps = 0.5f; // example value
         damage = 35f; // example value
         upgradeCost = 110f;
+        towerIndex = 2;
+        orginalCost = towerToBuild.cost;
     }
     private void OnMouseDown()
     {

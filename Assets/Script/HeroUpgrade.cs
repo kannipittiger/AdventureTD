@@ -2,7 +2,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System;
-using Unity.VisualScripting;
 
 public class HeroUpgrade : MonoBehaviour
 {
@@ -18,24 +17,20 @@ public class HeroUpgrade : MonoBehaviour
     [SerializeField] private Image ArrowUp;
     [SerializeField] private Image ArrowDown;
     [SerializeField] private Button upgradeButton;
+    [SerializeField] private Button sellButton; // Reference to the sell button
 
-    private Heroes currentHero; 
-    private int countUpgrade = 0;
-    
+    private Heroes currentHero;
+    private BuildManager buildManager;
+
+    // private int countUpgrade = 0;
 
     private void Start()
     {
         upgradePanel.SetActive(false);
-
+        sellButton.onClick.AddListener(SellHero); // Add listener to the sell button
+        buildManager = BuildManager.main; // อ้างอิงถึง BuildManager
     }
 
-    private void Update()
-    {
-        if (countUpgrade > 2)
-        {
-            MaxUpgrade();
-        }
-    }
 
     public void Initialize(Heroes hero)
     {
@@ -57,6 +52,7 @@ public class HeroUpgrade : MonoBehaviour
     {
         upgradePanel.SetActive(show);
     }
+
     public void CloseBTN()
     {
         upgradePanel.SetActive(false);
@@ -64,41 +60,48 @@ public class HeroUpgrade : MonoBehaviour
 
     private void UpdateUpgradeUI()
     {
-        float currentDamage = currentHero.CurrentDamage;
-        float currentRange = currentHero.targetingRange;
-        float currentUpgradeCost = currentHero.UpgradeCost;
-        currentRange.ToString("0.00");
-        float nextDamage = currentDamage * 1.2f;  // Example increase, adjust as needed
-        float nextRange = currentRange * 1.1f;    // Example increase, adjust as needed
-        float nextUpgrade = currentUpgradeCost * 1.2f;
-        
+        if (currentHero.countUpgrade > 2)
+        {
+            MaxUpgrade();
+        }
+        else
+        {
+            float currentDamage = currentHero.CurrentDamage;
+            float currentRange = currentHero.targetingRange;
+            float currentUpgradeCost = currentHero.UpgradeCost;
+            currentRange.ToString("0.00");
+            float nextDamage = currentDamage * 1.2f;
+            float nextRange = currentRange * 1.1f;
+            float nextUpgrade = currentUpgradeCost * 1.2f;
 
-        currentDamage = Mathf.RoundToInt(currentDamage);
-        currentRange.ToString("0.00");
-        nextDamage = Mathf.RoundToInt(nextDamage);
-        nextRange.ToString("0.00");
-        currentUpgradeCost = Mathf.RoundToInt(nextUpgrade);
-        // nextUpgrade = Mathf.RoundToInt(nextUpgrade);
+            currentDamage = Mathf.RoundToInt(currentDamage);
+            currentRange.ToString("0.00");
+            nextDamage = Mathf.RoundToInt(nextDamage);
+            nextRange.ToString("0.00");
+            currentUpgradeCost = Mathf.RoundToInt(nextUpgrade);
 
-        currentDamageText.text = $"DMG: {currentDamage}";
-        currentRangeText.text = $"RNG: {currentRange}";
-        nextDamageText.text = $"{nextDamage}";
-        nextRangeText.text = $"{nextRange}";
-        upgradeCostText.text = $"{currentUpgradeCost}$";
-        countUpgradeText.text = $"Upgrade ({countUpgrade})";
+            currentDamageText.text = $"DMG: {currentDamage}";
+            currentRangeText.text = $"RNG: {currentRange:F2}";
+            nextDamageText.text = $"{nextDamage}";
+            nextRangeText.text = $"{nextRange:F2}";
+            upgradeCostText.text = $"{currentUpgradeCost}$";
+            countUpgradeText.text = $"Upgrade ({currentHero.countUpgrade})";
+            upgradeButtonText.text = $"Upgrade";
+        }
+
     }
 
     public void ApplyUpgrade()
     {
-        if (countUpgrade <= 2)
+
+        if (currentHero.countUpgrade <= 2)
         {
 
-            upgradeButtonText.text = $"Upgrade";
             if (LevelManager.main.currency >= Mathf.RoundToInt(currentHero.UpgradeCost))
             {
                 LevelManager.main.currency -= Mathf.RoundToInt(currentHero.UpgradeCost);
                 currentHero.UpgradeStats();
-                countUpgrade++;
+                currentHero.countUpgrade++;
                 UpdateUpgradeUI();
             }
         }
@@ -118,4 +121,32 @@ public class HeroUpgrade : MonoBehaviour
         nextRangeText.gameObject.SetActive(false);
         upgradeCostText.gameObject.SetActive(false);
     }
+
+    // Method to sell the hero
+    private void SellHero()
+{
+    if (currentHero != null)
+    {
+        // Calculate 70% of the hero's original cost
+        int sellAmount = Mathf.RoundToInt(currentHero.OriginalCost * 0.7f);
+        
+        // Add the sell amount to the player's currency
+        LevelManager.main.currency += sellAmount;
+
+        // Decrease the placement count in BuildManager
+        BuildManager.main.towerPlacementCount[currentHero.TowerIndex]--;
+
+        // Remove the hero from the scene
+        Destroy(currentHero.gameObject);
+
+        // Close the upgrade panel
+        upgradePanel.SetActive(false);
+    }
+    else
+    {
+        Debug.LogError("No hero to sell.");
+    }
+}
+
+
 }
