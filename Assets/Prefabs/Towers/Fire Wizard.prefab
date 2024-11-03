@@ -173,7 +173,7 @@ MonoBehaviour:
   firingPoint: {fileID: 1097639215627941940}
   fireSound: {fileID: 8300000, guid: ca62b7c602bbe1540bb4b9effec97c0b, type: 3}
   rangeObject: {fileID: 4554000898106548394}
-  aps: 0.5
+  aps: 1
   damage: 30
   targetingRange: 0
 --- !u!95 &5746696136205150854

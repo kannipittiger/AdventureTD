@@ -11,23 +11,41 @@ public class HeroUpgrade : MonoBehaviour
     [SerializeField] private TextMeshProUGUI nextDamageText;
     [SerializeField] private TextMeshProUGUI nextRangeText;
     [SerializeField] private TextMeshProUGUI upgradeCostText;
+    [SerializeField] private TextMeshProUGUI countUpgradeText;
+    [SerializeField] private TextMeshProUGUI upgradeButtonText;
     [SerializeField] private Image heroPic;
+    [SerializeField] private Image ArrowUp;
+    [SerializeField] private Image ArrowDown;
     [SerializeField] private Button upgradeButton;
 
-    private Heroes hero;
+    private Heroes wizard;
+    private IceWizard iceWizard;
+    private Knight knight;
+    private Gunner gunner;
     private int currentUpgradeCost = 70;
+    private int countUpgrade = 0;
+    
 
     private void Start()
     {
         upgradePanel.SetActive(false);
+
     }
 
-    public void Initialize(Heroes hero)
+    private void Update()
     {
-        this.hero = hero;
+        if (countUpgrade > 2)
+        {
+            MaxUpgrade();
+        }
+    }
+
+    public void Initialize(Heroes wizard)
+    {
+        this.wizard = wizard;
         UpdateUpgradeUI();
         // Set the hero sprite in the UI image
-        Sprite heroSprite = hero.GetHeroSprite();
+        Sprite heroSprite = wizard.GetHeroSprite();
         if (heroSprite != null)
         {
             heroPic.sprite = heroSprite;
@@ -49,8 +67,8 @@ public class HeroUpgrade : MonoBehaviour
 
     private void UpdateUpgradeUI()
     {
-        float currentDamage = hero.damage;
-        float currentRange = hero.targetingRange;
+        float currentDamage = wizard.damage;
+        float currentRange = wizard.targetingRange;
         currentRange.ToString("0.00");
         float nextDamage = currentDamage * 1.2f;  // Example increase, adjust as needed
         float nextRange = currentRange * 1.1f;    // Example increase, adjust as needed
@@ -67,16 +85,37 @@ public class HeroUpgrade : MonoBehaviour
         nextDamageText.text = $"{nextDamage}";
         nextRangeText.text = $"{nextRange}";
         upgradeCostText.text = $"{currentUpgradeCost}$";
+        countUpgradeText.text = $"Upgrade ({countUpgrade})";
     }
 
     public void ApplyUpgrade()
     {
-
-        if (LevelManager.main.currency >= Mathf.RoundToInt(currentUpgradeCost))
+        if (countUpgrade <= 2)
         {
-            LevelManager.main.currency -= Mathf.RoundToInt(currentUpgradeCost);
-            hero.UpgradeStats();
-            UpdateUpgradeUI();
+
+            upgradeButtonText.text = $"Upgrade";
+            if (LevelManager.main.currency >= Mathf.RoundToInt(currentUpgradeCost))
+            {
+                LevelManager.main.currency -= Mathf.RoundToInt(currentUpgradeCost);
+                wizard.UpgradeStats();
+                countUpgrade++;
+                UpdateUpgradeUI();
+            }
         }
+        else
+        {
+            MaxUpgrade();
+        }
+    }
+
+    private void MaxUpgrade()
+    {
+        countUpgradeText.text = $"Upgrade (Max)";
+        upgradeButtonText.text = $"Max";
+        ArrowUp.gameObject.SetActive(false);
+        ArrowDown.gameObject.SetActive(false);
+        nextDamageText.gameObject.SetActive(false);
+        nextRangeText.gameObject.SetActive(false);
+        upgradeCostText.gameObject.SetActive(false);
     }
 }
