@@ -5,7 +5,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class Knight : MonoBehaviour
+public class Knight : Heroes
 {
     [Header("References")]
     [SerializeField] private Transform heroRotationPoint;
@@ -13,22 +13,39 @@ public class Knight : MonoBehaviour
     // [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform firingPoint;
     [SerializeField] private AudioClip swordSound;
-    [SerializeField] private Transform rangeObject; // Reference to the Range GameObject
+    // [SerializeField] private Transform rangeObject; // Reference to the Range GameObject
 
-    [Header("Attributes")]
-    [SerializeField] private float aps = 1f;
-    [SerializeField] private int damage = 50; // Damage dealt per shot
 
     private List<Transform> targets = new List<Transform>();
     private float timeUntilFire;
-    private float targetingRange;
+  
 
     private Animator anim;
 
+    protected override void Start()
+    {
+        base.Start(); // Call the base class Start to initialize common properties
+        anim = GetComponent<Animator>();
+
+        // Set specific values for Wizard if needed
+        aps = 0.5f; // example value
+        damage = 20f; // example value
+    }
+    private void OnMouseDown()
+    {
+        HeroUpgrade upgradeUI = FindObjectOfType<HeroUpgrade>();
+        if (upgradeUI == null)
+        {
+            Debug.LogError("Upgrade UI not assigned.");
+            return;
+        }
+        upgradeUI.Initialize(this);
+        upgradeUI.ToggleUpgradePanel(true);
+    }
     private void Update()
     {
-        targetingRange = Mathf.Max(rangeObject.localScale.x, rangeObject.localScale.y) / 2f;
-        anim = GetComponent<Animator>();
+        // targetingRange = Mathf.Max(rangeObject.localScale.x, rangeObject.localScale.y) / 2f;
+        // anim = GetComponent<Animator>();
 
         FindTargets();  // Check for all enemies within range
 
@@ -67,7 +84,7 @@ public class Knight : MonoBehaviour
         if (targetHealth != null)
         {
 
-            targetHealth.TakeDamage(damage);
+            targetHealth.TakeDamage(Mathf.RoundToInt(damage));
         }
     }
 

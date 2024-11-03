@@ -127,6 +127,7 @@ GameObject:
   - component: {fileID: 6923519836486062170}
   - component: {fileID: 6965706650368559504}
   - component: {fileID: 2508669381133114370}
+  - component: {fileID: -3934313040493538760}
   m_Layer: 0
   m_Name: Knight v2
   m_TagString: Untagged
@@ -164,15 +165,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9becd5a1f01c8d478ef4822702d425b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rangeObject: {fileID: 6802747220618013922}
+  aps: 0.5
+  damage: 50
+  targetingRange: 0
   heroRotationPoint: {fileID: 3708230936950398027}
   enemyMask:
     serializedVersion: 2
     m_Bits: 64
   firingPoint: {fileID: 6789907097929578894}
   swordSound: {fileID: 8300000, guid: dda8ba81483c50049bd5fc99a52402e0, type: 3}
-  rangeObject: {fileID: 6802747220618013922}
-  aps: 0.5
-  damage: 50
 --- !u!95 &6965706650368559504
 Animator:
   serializedVersion: 5
@@ -246,6 +248,51 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &-3934313040493538760
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2059366310813724620}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 4, y: 4}
+    newSize: {x: 0.8214286, y: 0.8751172}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 4, y: 4}
+  m_EdgeRadius: 0
 --- !u!1001 &8723283969689771394
 PrefabInstance:
   m_ObjectHideFlags: 0

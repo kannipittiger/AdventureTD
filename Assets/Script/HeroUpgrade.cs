@@ -18,10 +18,7 @@ public class HeroUpgrade : MonoBehaviour
     [SerializeField] private Image ArrowDown;
     [SerializeField] private Button upgradeButton;
 
-    private Heroes wizard;
-    private IceWizard iceWizard;
-    private Knight knight;
-    private Gunner gunner;
+    private Heroes currentHero; 
     private int currentUpgradeCost = 70;
     private int countUpgrade = 0;
     
@@ -40,12 +37,12 @@ public class HeroUpgrade : MonoBehaviour
         }
     }
 
-    public void Initialize(Heroes wizard)
+    public void Initialize(Heroes hero)
     {
-        this.wizard = wizard;
+        currentHero = hero;
         UpdateUpgradeUI();
         // Set the hero sprite in the UI image
-        Sprite heroSprite = wizard.GetHeroSprite();
+        Sprite heroSprite = hero.GetHeroSprite();
         if (heroSprite != null)
         {
             heroPic.sprite = heroSprite;
@@ -67,8 +64,8 @@ public class HeroUpgrade : MonoBehaviour
 
     private void UpdateUpgradeUI()
     {
-        float currentDamage = wizard.damage;
-        float currentRange = wizard.targetingRange;
+        float currentDamage = currentHero.Damage;
+        float currentRange = currentHero.targetingRange;
         currentRange.ToString("0.00");
         float nextDamage = currentDamage * 1.2f;  // Example increase, adjust as needed
         float nextRange = currentRange * 1.1f;    // Example increase, adjust as needed
@@ -97,7 +94,7 @@ public class HeroUpgrade : MonoBehaviour
             if (LevelManager.main.currency >= Mathf.RoundToInt(currentUpgradeCost))
             {
                 LevelManager.main.currency -= Mathf.RoundToInt(currentUpgradeCost);
-                wizard.UpgradeStats();
+                currentHero.UpgradeStats();
                 countUpgrade++;
                 UpdateUpgradeUI();
             }
