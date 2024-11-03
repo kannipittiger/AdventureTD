@@ -53,7 +53,11 @@ MonoBehaviour:
   rangeObject: {fileID: 7338719176431509421}
   aps: 1
   damage: 100
+  upgradeCost: 0
+  orginalCost: 0
+  towerIndex: 0
   targetingRange: 0
+  countUpgrade: 0
   heroRotationPoint: {fileID: 1097987249535493498}
   enemyMask:
     serializedVersion: 2
@@ -127,7 +131,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1195195389
-  m_SortingLayer: 8
+  m_SortingLayer: 11
   m_SortingOrder: 0
   m_Sprite: {fileID: 630275614, guid: 4b89774225ad67a439bc32cb9c1029ab, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -287,7 +291,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1195195389
-  m_SortingLayer: 8
+  m_SortingLayer: 11
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 4a36f2eaf4494884fbfc9e0e9d4c50f3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -351,6 +355,14 @@ PrefabInstance:
     - target: {fileID: 2756279649604818747, guid: c99896530483a4a48aa30303251598c8, type: 3}
       propertyPath: m_Name
       value: SniperRange
+      objectReference: {fileID: 0}
+    - target: {fileID: 6811814075331646634, guid: c99896530483a4a48aa30303251598c8, type: 3}
+      propertyPath: m_SortingLayer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 6811814075331646634, guid: c99896530483a4a48aa30303251598c8, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1195195389
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
