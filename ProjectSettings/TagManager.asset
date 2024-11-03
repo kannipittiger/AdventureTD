@@ -60,11 +60,11 @@ TagManager:
   - name: MAP
     uniqueID: 2059283701
     locked: 0
-  - name: hills
-    uniqueID: 1190453875
-    locked: 0
   - name: overlaymap
     uniqueID: 1853073439
+    locked: 0
+  - name: hills
+    uniqueID: 1190453875
     locked: 0
   - name: hilldown
     uniqueID: 1079789979
