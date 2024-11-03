@@ -45,6 +45,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: onwater
+    uniqueID: 3472675465
+    locked: 0
+  - name: water
+    uniqueID: 681924465
+    locked: 0
   - name: corrupted
     uniqueID: 428684799
     locked: 0
@@ -54,17 +60,20 @@ TagManager:
   - name: MAP
     uniqueID: 2059283701
     locked: 0
-  - name: hills
-    uniqueID: 1190453875
-    locked: 0
   - name: overlaymap
     uniqueID: 1853073439
+    locked: 0
+  - name: hills
+    uniqueID: 1190453875
     locked: 0
   - name: hilldown
     uniqueID: 1079789979
     locked: 0
   - name: props
     uniqueID: 640223259
+    locked: 0
+  - name: onprop
+    uniqueID: 999861965
     locked: 0
   - name: Hero
     uniqueID: 1195195389
