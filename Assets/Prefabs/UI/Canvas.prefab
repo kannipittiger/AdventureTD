@@ -2747,7 +2747,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3345965861490872117, guid: 789bdd8e24250e144904bef346b753bf, type: 3}
       propertyPath: m_text
-      value: 200 $
+      value: 300 $
       objectReference: {fileID: 0}
     - target: {fileID: 3345965861490872117, guid: 789bdd8e24250e144904bef346b753bf, type: 3}
       propertyPath: m_fontStyle
@@ -2929,7 +2929,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3345965861490872117, guid: 789bdd8e24250e144904bef346b753bf, type: 3}
       propertyPath: m_text
-      value: 300 $
+      value: 200 $
       objectReference: {fileID: 0}
     - target: {fileID: 3345965861490872117, guid: 789bdd8e24250e144904bef346b753bf, type: 3}
       propertyPath: m_fontStyle

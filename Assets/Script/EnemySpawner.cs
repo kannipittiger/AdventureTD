@@ -2,6 +2,7 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 public class EnemySpawner : MonoBehaviour
 {
     [Header("References")]
@@ -27,92 +28,133 @@ public class EnemySpawner : MonoBehaviour
     private float eps;//enemy per second
     private int enemiesLeftToSpawn;
     private bool isSpawning = false;
-    
+
     private int currentHP; // ตัวแปรที่จะใช้เก็บค่า hitPoints
     private int currentSpeed;
     private int currentMoney;
 
-    private void Awake(){
+    private void Awake()
+    {
         onEnemyDestroy.AddListener(EnemyDestroyed);
         currentHP = baseEnemyHealth;
         currentSpeed = baseEnemySpeed;
         currentMoney = baseMoney;
         waveText.gameObject.SetActive(false); // ซ่อนข้อความเริ่มต้น
     }
-    
-    private void Start(){
+
+    private void Start()
+    {
         StartCoroutine(StartWave());
     }
-    
-    private void Update(){
-        if(!isSpawning) return;
+
+    private void Update()
+    {
+        if (!isSpawning) return;
 
         timeSinceLastSpawn += Time.deltaTime;
 
-        if(timeSinceLastSpawn >= (1f / eps) && enemiesLeftToSpawn > 0){
+        if (timeSinceLastSpawn >= (1f / eps) && enemiesLeftToSpawn > 0)
+        {
             SpawnEnemy();
             enemiesLeftToSpawn--;
             enemiesAlive++;
             timeSinceLastSpawn = 0f;
         }
-        
-        if(enemiesAlive == 0 && enemiesLeftToSpawn == 0){
+
+        if (enemiesAlive == 0 && enemiesLeftToSpawn == 0)
+        {
             EndWave();
         }
     }
 
-    private void EnemyDestroyed(){
+    private void EnemyDestroyed()
+    {
         enemiesAlive--;
     }
 
-    private IEnumerator StartWave(){
+    private IEnumerator StartWave()
+    {
+        // แสดงข้อความเมื่อเริ่ม wave 1
+        if (currentWave == 1)
+        {
+            StartCoroutine(ShowWaveText("Wave 1"));
+        }
+
         yield return new WaitForSeconds(timeBetweenWaves);
         isSpawning = true;
         enemiesLeftToSpawn = EnemiesPerWave();
         eps = EnemiesPerSecond();
     }
 
-    private void EndWave(){
+    private void EndWave()
+    {
         isSpawning = false;
         timeSinceLastSpawn = 0f;
         currentWave++;
 
-        // แสดงข้อความเมื่อเริ่ม wave 2
-        if (currentWave == 1) {
-            StartCoroutine(ShowWaveText("Wave 1"));
-        }
-        else if (currentWave == 2) {
+        // แสดงข้อความเมื่อเริ่ม wave ถัดไป
+        if (currentWave == 2)
+        {
             currentHP = baseEnemyHealth * 2;
             baseEnemyHealth = currentHP;
             StartCoroutine(ShowWaveText("Wave 2 : Enemy HP x 2"));
         }
-        else if (currentWave == 3) {
+        else if (currentWave == 3)
+        {
             currentMoney = baseMoney * 3;
             baseMoney = currentMoney;
             StartCoroutine(ShowWaveText("Wave 3 : Bonus wave money x 3"));
         }
-        else if (currentWave == 4) {
+        else if (currentWave == 4)
+        {
             currentSpeed = baseEnemySpeed * 2;
             baseEnemySpeed = currentSpeed;
             StartCoroutine(ShowWaveText("Wave 4 : Enemy Speed x 2"));
-        }else if (currentWave == 5){
+        }
+        else if (currentWave == 5)
+        {
             currentHP = baseEnemyHealth * 3;
             baseEnemyHealth = currentHP;
-            StartCoroutine(ShowWaveText("Wave 4 : Enemy HP x 3"));
+            StartCoroutine(ShowWaveText("Wave 5 : Enemy HP x 3"));
+        }
+        else if (currentWave > 5)
+        {
+            StartCoroutine(ShowEndMessageAndLoadScene("You completed Wave 5!\nLoading Next Stage..."));
         }
         StartCoroutine(StartWave());
     }
 
-    private IEnumerator ShowWaveText(string message) {
-        waveText.text = message; // ตั้งค่าข้อความ
+    private IEnumerator ShowEndMessageAndLoadScene(string message)
+    {
+        waveText.text = message; // แสดงข้อความ
         waveText.gameObject.SetActive(true); // แสดงข้อความ
         yield return new WaitForSeconds(3f); // รอ 3 วินาที
+        SceneManager.LoadScene("Next Stage"); // โหลด Scene ถัดไป
+        waveText.gameObject.SetActive(false); // ซ่อนข้อความ
+    }
+    private IEnumerator ShowWaveText(string message)
+    {
+        waveText.text = message; // ตั้งค่าข้อความ
+        waveText.gameObject.SetActive(true); // แสดงข้อความ
+
+        float countdown = timeBetweenWaves; // เริ่มต้นเวลานับถอยหลัง
+
+        while (countdown > 0)
+        {
+            // อัปเดตข้อความนับถอยหลัง
+            waveText.text = message + "\n" + "start in " + Mathf.Ceil(countdown).ToString(); // แสดงข้อความพร้อมนับถอยหลัง
+            yield return new WaitForSeconds(1f); // รอ 1 วินาที
+            countdown -= 1f; // ลดเวลานับถอยหลัง
+        }
+
         waveText.gameObject.SetActive(false); // ซ่อนข้อความ
     }
 
-    private void SpawnEnemy(){
+
+    private void SpawnEnemy()
+    {
         // Debug.Log("Spawn Enemy");
-        int index = Random.Range(0,enemyPrefabs.Length);
+        int index = Random.Range(0, enemyPrefabs.Length);
         GameObject prefabToSpawn = enemyPrefabs[index];
         GameObject enemyInstance = Instantiate(prefabToSpawn, LevelManager.main.startPoint.position, Quaternion.identity);
         Health enemyHealth = enemyInstance.GetComponent<Health>();
@@ -120,27 +162,32 @@ public class EnemySpawner : MonoBehaviour
         Health enemyDrop = enemyInstance.GetComponent<Health>();
         if (currentWave == 2)
         {
-            enemyHealth.SetHealth(currentHP);            
+            enemyHealth.SetHealth(currentHP);
         }
-        else if(currentWave == 3){
+        else if (currentWave == 3)
+        {
             enemyDrop.SetCurrencyWorth(currentMoney);
         }
-        else if(currentWave == 4){
+        else if (currentWave == 4)
+        {
             enemyDrop.ResetCurrencyWorth();
             enemySpeed.UpdateSpeed(currentSpeed);
         }
-        else if(currentWave == 5){
+        else if (currentWave == 5)
+        {
             Debug.Log("HP & SPD : " + currentHP + " " + currentSpeed);
             enemyHealth.SetHealth(currentHP);
             // enemySpeed.UpdateSpeed(currentSpeed);
         }
     }
 
-    private int EnemiesPerWave(){
+    private int EnemiesPerWave()
+    {
         return Mathf.RoundToInt(baseEnemies * Mathf.Pow(currentWave, difficultlyScalingFactor));
     }
 
-    private float EnemiesPerSecond(){
-        return Mathf.Clamp(enemiesPerSecond * Mathf.Pow(currentWave, difficultlyScalingFactor), 0f , enemiesPerSecondCap);
+    private float EnemiesPerSecond()
+    {
+        return Mathf.Clamp(enemiesPerSecond * Mathf.Pow(currentWave, difficultlyScalingFactor), 0f, enemiesPerSecondCap);
     }
 }
