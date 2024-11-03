@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 // using System.Numerics;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemyMovement : MonoBehaviour
 {
@@ -33,6 +34,7 @@ public class EnemyMovement : MonoBehaviour
             pathIndex++;
             if(pathIndex == LevelManager.main.path.Length){
                 EnemySpawner.onEnemyDestroy.Invoke();
+                SceneManager.LoadScene("Defeat");
                 Destroy(gameObject);
                 return;
             }else{
