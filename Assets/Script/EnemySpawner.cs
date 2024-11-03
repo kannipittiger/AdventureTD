@@ -35,7 +35,7 @@ public class EnemySpawner : MonoBehaviour
 
     private void Awake()
     {
-        // onEnemyDestroy.AddListener(EnemyDestroyed);
+        onEnemyDestroy.AddListener(EnemyDestroyed);
         currentHP = baseEnemyHealth;
         currentSpeed = baseEnemySpeed;
         currentMoney = baseMoney;
@@ -68,10 +68,10 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 
-    // private void EnemyDestroyed()
-    // {
-    //     enemiesAlive--;
-    // }
+    private void EnemyDestroyed()
+    {
+        enemiesAlive--;
+    }
 
     private IEnumerator StartWave()
     {
