@@ -32,11 +32,13 @@ public class Gunner : Heroes
     {
         base.Start(); // Call the base class Start to initialize common properties
         anim = GetComponent<Animator>();
-        
+        Tower towerToBuild = BuildManager.main.GetSelectedTower();
         // Set specific values for Wizard if needed
-        aps = 1f; // example value
+        aps = 0.5f; // example value
         damage = 50f; // example value
         upgradeCost = 120f;
+        towerIndex = 3;
+        orginalCost = towerToBuild.cost;
     }
 
     private void OnMouseDown()

@@ -7,13 +7,13 @@ public class BuildManager : MonoBehaviour
     public static BuildManager main;
 
     [Header("References")]
-    [SerializeField] private Tower[] towers;
+    [SerializeField] public Tower[] towers;
 
     private int selectedTower = 0;
-  
+
 
     // Dictionary to track the number of times each tower type has been placed
-    private Dictionary<int, int> towerPlacementCount = new Dictionary<int, int>();
+    public Dictionary<int, int> towerPlacementCount = new Dictionary<int, int>();
 
     private void Awake()
     {
@@ -44,28 +44,30 @@ public class BuildManager : MonoBehaviour
     {
         int currentPlacementCount = towerPlacementCount[selectedTower];
         int maxPlacement = towers[selectedTower].maxPlacement;
-        
+
         Debug.Log($"Attempting to place {towers[selectedTower].name}. Current count: {currentPlacementCount}/{maxPlacement}");
-        
+
         return currentPlacementCount < maxPlacement;
     }
 
     // Call this method when placing a tower successfully
     public void RegisterTowerPlacement()
-{
-    if (!CanPlaceSelectedTower())
     {
+        if (!CanPlaceSelectedTower())
+        {
 
-        // Trigger feedback or actions, such as disabling placement or showing a message
-        Debug.Log($"Cannot place {towers[selectedTower].name}. Maximum placement limit reached!");
+            // Trigger feedback or actions, such as disabling placement or showing a message
+            Debug.Log($"Cannot place {towers[selectedTower].name}. Maximum placement limit reached!");
 
-        // You can add additional code here if you want to disable placement UI or notify the player
-        return;
+            // You can add additional code here if you want to disable placement UI or notify the player
+            return;
+        }
+
+        // Increase the placement count if we haven't reached the max limit
+        towerPlacementCount[selectedTower]++;
+        Debug.Log($"Placed {towers[selectedTower].name}. New count: {towerPlacementCount[selectedTower]}");
     }
-
-    // Increase the placement count if we haven't reached the max limit
-    towerPlacementCount[selectedTower]++;
-    Debug.Log($"Placed {towers[selectedTower].name}. New count: {towerPlacementCount[selectedTower]}");
-}
+    // BuildManager.cs
+    
 
 }

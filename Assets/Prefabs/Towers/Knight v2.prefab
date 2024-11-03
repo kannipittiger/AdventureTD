@@ -168,6 +168,7 @@ MonoBehaviour:
   rangeObject: {fileID: 6802747220618013922}
   aps: 0.5
   damage: 50
+  upgradeCost: 0
   targetingRange: 0
   heroRotationPoint: {fileID: 3708230936950398027}
   enemyMask:
@@ -284,7 +285,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4, y: 4}
+    oldSize: {x: 0.9375, y: 1.5}
     newSize: {x: 0.8214286, y: 0.8751172}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
