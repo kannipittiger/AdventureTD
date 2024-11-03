@@ -28,6 +28,7 @@ public class IceWizard : Heroes
         // Set specific values for Wizard if needed
         aps = 0.5f; // example value
         damage = 20f; // example value
+        upgradeCost = 100f;
     }
     
     private void OnMouseDown()
@@ -89,7 +90,7 @@ public class IceWizard : Heroes
         if (bulletScript != null)
         {
             bulletScript.Initialize(targetingRange);
-            bulletScript.SetDamage(Mathf.RoundToInt(damage));
+            bulletScript.SetDamage(Mathf.RoundToInt(CurrentDamage));
         }
     }
 

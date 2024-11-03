@@ -35,7 +35,8 @@ public class Gunner : Heroes
         
         // Set specific values for Wizard if needed
         aps = 1f; // example value
-        damage = 30f; // example value
+        damage = 50f; // example value
+        upgradeCost = 120f;
     }
 
     private void OnMouseDown()
@@ -119,7 +120,7 @@ public class Gunner : Heroes
             Health enemy = hit.transform.GetComponent<Health>(); // Assuming each enemy has a Health component
             if (enemy != null)
             {
-                enemy.TakeDamage(Mathf.RoundToInt(damage)); // Call a method to apply damage to the enemy
+                enemy.TakeDamage(Mathf.RoundToInt(CurrentDamage)); // Call a method to apply damage to the enemy
             }
         }
     }

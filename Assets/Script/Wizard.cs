@@ -23,6 +23,7 @@ public class Wizard : Heroes
         // Set specific values for Wizard if needed
         aps = 1f; // example value
         damage = 30f; // example value
+        upgradeCost = 70f;
     }
 
     private void OnMouseDown()
@@ -77,7 +78,7 @@ public class Wizard : Heroes
         if (bulletScript != null)
         {
             bulletScript.Initialize(targetingRange);
-            bulletScript.SetDamage(Mathf.RoundToInt(damage));
+            bulletScript.SetDamage(Mathf.RoundToInt(CurrentDamage));
         }
         SoundManager.instance.PlaySound(fireSound);
     }
