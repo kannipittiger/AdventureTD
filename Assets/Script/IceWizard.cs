@@ -22,15 +22,32 @@ public class IceWizard : Heroes
     Animator anim;
     protected override void Start()
     {
-        base.Start(); // Call the base class Start to initialize common properties
+        base.Start();
         anim = GetComponent<Animator>();
+
+        // Check if BuildManager.main is assigned
+        if (BuildManager.main == null)
+        {
+            Debug.LogError("BuildManager.main is not assigned. Please ensure BuildManager is in the scene.");
+            return;
+        }
+
+        // Get the selected tower, but check if it's null
         Tower towerToBuild = BuildManager.main.GetSelectedTower();
+        if (towerToBuild != null)
+        {
+            orginalCost = towerToBuild.cost;
+        }
+        else
+        {
+            Debug.LogWarning("No tower selected when initializing Wizard. orginalCost not set.");
+        }
+
         // Set specific values for Wizard if needed
-        aps = 1f; // example value
-        damage = 30f; // example value
+        aps = 0.7f; // example value
+        damage = 20f; // example value
         upgradeCost = 100f;
         towerIndex = 1;
-        orginalCost = towerToBuild.cost;
     }
     
     private void OnMouseDown()

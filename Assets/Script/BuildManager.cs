@@ -9,17 +9,15 @@ public class BuildManager : MonoBehaviour
     [Header("References")]
     [SerializeField] public Tower[] towers;
 
-    private int selectedTower = 0;
+    private int selectedTower = -1;  // Initial value set to -1 to indicate no selection
+    private bool hasSelectedTower = false; // New flag to check selection
 
-
-    // Dictionary to track the number of times each tower type has been placed
     public Dictionary<int, int> towerPlacementCount = new Dictionary<int, int>();
 
     private void Awake()
     {
         main = this;
 
-        // Initialize placement counts to zero for each tower type
         for (int i = 0; i < towers.Length; i++)
         {
             towerPlacementCount[i] = 0;
@@ -29,6 +27,12 @@ public class BuildManager : MonoBehaviour
 
     public Tower GetSelectedTower()
     {
+        if (!hasSelectedTower)
+        {
+            Debug.Log("No tower selected!");
+            return null;
+        }
+
         Debug.Log($"Selected Tower: {towers[selectedTower].name}");
         return towers[selectedTower];
     }
@@ -36,12 +40,14 @@ public class BuildManager : MonoBehaviour
     public void SetSelectedTower(int _selectedTower)
     {
         selectedTower = _selectedTower;
+        hasSelectedTower = true; // Mark that a tower is selected
         Debug.Log($"Tower selection changed to: {towers[selectedTower].name}");
     }
 
-    // Check if the selected tower can still be placed
     public bool CanPlaceSelectedTower()
     {
+        if (!hasSelectedTower) return false; // Check if a tower is selected
+
         int currentPlacementCount = towerPlacementCount[selectedTower];
         int maxPlacement = towers[selectedTower].maxPlacement;
 
@@ -50,24 +56,12 @@ public class BuildManager : MonoBehaviour
         return currentPlacementCount < maxPlacement;
     }
 
-    // Call this method when placing a tower successfully
     public void RegisterTowerPlacement()
     {
-        if (!CanPlaceSelectedTower())
-        {
+        if (!CanPlaceSelectedTower()) return;
 
-            // Trigger feedback or actions, such as disabling placement or showing a message
-            Debug.Log($"Cannot place {towers[selectedTower].name}. Maximum placement limit reached!");
-
-            // You can add additional code here if you want to disable placement UI or notify the player
-            return;
-        }
-
-        // Increase the placement count if we haven't reached the max limit
         towerPlacementCount[selectedTower]++;
+        hasSelectedTower = false; // Reset selection after placing the tower
         Debug.Log($"Placed {towers[selectedTower].name}. New count: {towerPlacementCount[selectedTower]}");
     }
-    // BuildManager.cs
-    
-
 }

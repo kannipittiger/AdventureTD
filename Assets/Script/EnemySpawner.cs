@@ -35,7 +35,7 @@ public class EnemySpawner : MonoBehaviour
 
     private void Awake()
     {
-        onEnemyDestroy.AddListener(EnemyDestroyed);
+        // onEnemyDestroy.AddListener(EnemyDestroyed);
         currentHP = baseEnemyHealth;
         currentSpeed = baseEnemySpeed;
         currentMoney = baseMoney;
@@ -67,10 +67,10 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 
-    private void EnemyDestroyed()
-    {
-        enemiesAlive--;
-    }
+    // private void EnemyDestroyed()
+    // {
+    //     enemiesAlive--;
+    // }
 
     private IEnumerator StartWave()
     {
@@ -101,25 +101,45 @@ public class EnemySpawner : MonoBehaviour
         }
         else if (currentWave == 3)
         {
-            currentMoney = baseMoney * 3;
-            baseMoney = currentMoney;
-            StartCoroutine(ShowWaveText("Wave 3 : Bonus wave money x 3"));
+            currentSpeed = baseEnemySpeed * 2;
+            baseEnemySpeed = currentSpeed;
+            StartCoroutine(ShowWaveText("Wave 3 : Enemy Speed x 2"));
         }
         else if (currentWave == 4)
         {
-            currentSpeed = baseEnemySpeed * 2;
-            baseEnemySpeed = currentSpeed;
-            StartCoroutine(ShowWaveText("Wave 4 : Enemy Speed x 2"));
+            currentMoney = baseMoney * 3;
+            baseMoney = currentMoney;
+
+            StartCoroutine(ShowWaveText("Wave 4 : Bonus wave money x 3"));
         }
         else if (currentWave == 5)
         {
+
+            StartCoroutine(ShowWaveText("Wave 5"));
+        }
+        else if (currentWave == 6)
+        {
+            currentSpeed = baseEnemySpeed * 2;
+            baseEnemySpeed = currentSpeed;
+            StartCoroutine(ShowWaveText("Wave 6 : Enemy Speed x 2"));
+        }
+        else if (currentWave == 7)
+        {
             currentHP = baseEnemyHealth * 3;
             baseEnemyHealth = currentHP;
-            StartCoroutine(ShowWaveText("Wave 5 : Enemy HP x 3"));
+            StartCoroutine(ShowWaveText("Wave 7 : Enemy HP x 3"));
         }
-        else if (currentWave > 5)
+        else if (currentWave == 8)
         {
-            StartCoroutine(ShowEndMessageAndLoadScene("You completed Wave 5!\nLoading Next Stage..."));
+            currentHP = baseEnemyHealth * 2;
+            baseEnemyHealth = currentHP;
+            currentSpeed = baseEnemySpeed * 2;
+            baseEnemySpeed = currentSpeed;
+            StartCoroutine(ShowWaveText("Wave 8 : Enemy HP & SPD x 2"));
+        }
+        else if (currentWave > 8)
+        {
+            StartCoroutine(ShowEndMessageAndLoadScene("You completed Wave 8!\nLoading Next Stage..."));
         }
         StartCoroutine(StartWave());
     }

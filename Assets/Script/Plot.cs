@@ -29,6 +29,12 @@ public class Plot : MonoBehaviour
 
         Tower towerToBuild = BuildManager.main.GetSelectedTower();
         
+        if (towerToBuild == null)
+        {
+            Debug.Log("Please select a tower first.");
+            return;
+        }
+
         if (towerToBuild.cost > LevelManager.main.currency){
             Debug.Log("You can't afford this tower");
             StartCoroutine(LevelManager.main.NoMoneyText("You don't have enough money"));
@@ -44,6 +50,6 @@ public class Plot : MonoBehaviour
 
         LevelManager.main.SpendCurrency(towerToBuild.cost);
         tower = Instantiate(towerToBuild.prefab, transform.position, Quaternion.identity);
-        BuildManager.main.RegisterTowerPlacement();
+        BuildManager.main.RegisterTowerPlacement(); // Register placement and reset selection
     }
 }
