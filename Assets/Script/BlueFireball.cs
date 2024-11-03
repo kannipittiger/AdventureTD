@@ -16,6 +16,7 @@ public class BlueFireball : MonoBehaviour
     private float maxRange;
     // เพิ่มตัวแปรสำหรับ Animator
     private Animator anim;
+    private int damage = 20;
 
     private void Start()
     {
@@ -34,6 +35,10 @@ public class BlueFireball : MonoBehaviour
         // Set the initial position and range when the bullet is created
         spawnPosition = transform.position;
         maxRange = range;
+    }
+    public void SetDamage(int heroDamage)
+    {
+        damage = heroDamage;
     }
     private void Update()
     {
@@ -58,7 +63,7 @@ public class BlueFireball : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D other)
     {
     // ลดพลังชีวิตของศัตรูเมื่อชน
-    other.gameObject.GetComponent<Health>().TakeDamage(bulletDamage);
+    other.gameObject.GetComponent<Health>().TakeDamage(damage);
 
     // หยุดการเคลื่อนที่ของกระสุน
     rb.velocity = Vector2.zero;  // หยุดการเคลื่อนที่
