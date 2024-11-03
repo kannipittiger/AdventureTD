@@ -44,6 +44,7 @@ public class EnemySpawner : MonoBehaviour
 
     private void Start()
     {
+        Time.timeScale = 1;
         StartCoroutine(StartWave());
     }
 
