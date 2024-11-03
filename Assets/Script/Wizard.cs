@@ -15,15 +15,18 @@ public class Wizard : Heroes
     private Transform target;
     private float timeUntilFire;
 
+
     protected override void Start()
     {
         base.Start(); // Call the base class Start to initialize common properties
         anim = GetComponent<Animator>();
-        
+        Tower towerToBuild = BuildManager.main.GetSelectedTower();
         // Set specific values for Wizard if needed
         aps = 1f; // example value
         damage = 30f; // example value
         upgradeCost = 70f;
+        towerIndex = 0;
+        orginalCost = towerToBuild.cost;
     }
 
     private void OnMouseDown()

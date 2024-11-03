@@ -24,11 +24,13 @@ public class IceWizard : Heroes
     {
         base.Start(); // Call the base class Start to initialize common properties
         anim = GetComponent<Animator>();
-
+        Tower towerToBuild = BuildManager.main.GetSelectedTower();
         // Set specific values for Wizard if needed
-        aps = 0.5f; // example value
-        damage = 20f; // example value
+        aps = 1f; // example value
+        damage = 30f; // example value
         upgradeCost = 100f;
+        towerIndex = 1;
+        orginalCost = towerToBuild.cost;
     }
     
     private void OnMouseDown()
