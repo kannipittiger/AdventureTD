@@ -311,6 +311,14 @@ PrefabInstance:
       value: FireWizRange
       objectReference: {fileID: 0}
     - target: {fileID: 1395491388754669968, guid: de09ee03d96bff949a8c5671461423e7, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1395491388754669968, guid: de09ee03d96bff949a8c5671461423e7, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1395491388754669968, guid: de09ee03d96bff949a8c5671461423e7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.116
       objectReference: {fileID: 0}

@@ -2038,7 +2038,7 @@ Tilemap:
       - {fileID: 388297300, guid: f32ec2fddd39fd141afd12fb81038215, type: 3}
       - {fileID: 1946372315, guid: f32ec2fddd39fd141afd12fb81038215, type: 3}
       - {fileID: 343440620, guid: f32ec2fddd39fd141afd12fb81038215, type: 3}
-      m_AnimationSpeed: 6.0000005
+      m_AnimationSpeed: 6
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: -4, y: -2, z: 0}
@@ -71011,7 +71011,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8573213901872571114, guid: 8449d591f5a6be14caf5bcc43695c485, type: 3}
       propertyPath: m_AnimatedTiles.Array.data[3].second.m_AnimationSpeed
-      value: 6
+      value: 6.0000005
       objectReference: {fileID: 0}
     - target: {fileID: 8573213901872571114, guid: 8449d591f5a6be14caf5bcc43695c485, type: 3}
       propertyPath: m_AnimatedTiles.Array.data[4].second.m_AnimationSpeed
@@ -75405,22 +75405,57 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelManager
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5720598996179721110, guid: 8d5d1602a92cb3b40acf7ad2303a9915, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7171344966620879901, guid: 8d5d1602a92cb3b40acf7ad2303a9915, type: 3}
+      insertIndex: 2
+      addedObject: {fileID: 1206309084}
   m_SourcePrefab: {fileID: 100100000, guid: 8d5d1602a92cb3b40acf7ad2303a9915, type: 3}
 --- !u!114 &1206309082 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5759564075641954512, guid: 8d5d1602a92cb3b40acf7ad2303a9915, type: 3}
   m_PrefabInstance: {fileID: 1206309081}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1206309083}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3d38d8538fc84974c930166f12732d5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1206309083 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7171344966620879901, guid: 8d5d1602a92cb3b40acf7ad2303a9915, type: 3}
+  m_PrefabInstance: {fileID: 1206309081}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1206309084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1206309083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c29aea62fc7dc6e49a4b1fa855ee980b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPrefabs:
+  - {fileID: 6209504172183386607, guid: 3ce4eddddb6eccd43b5bf2a949d421ac, type: 3}
+  - {fileID: 1903224443512118037, guid: be3fc008ea9b95846ad09cb77618e6ac, type: 3}
+  - {fileID: 8287099975089612037, guid: 21336112b9153c348b81a2ab274f5f6d, type: 3}
+  - {fileID: 6205986909221544181, guid: 385334027fc35af428affc4f53fdbf7a, type: 3}
+  waveText: {fileID: 1243608958}
+  baseEnemies: 10
+  enemiesPerSecond: 1
+  timeBetweenWaves: 5
+  difficultlyScalingFactor: 1
+  baseEnemyHealth: 30
+  baseEnemySpeed: 2
+  baseMoney: 50
+  enemiesPerSecondCap: 15
 --- !u!4 &1209329017 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4777547958188135186, guid: c34e7a4cdf75ef94ca05e85b53846de9, type: 3}

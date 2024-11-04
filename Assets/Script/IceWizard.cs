@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class IceWizard : Heroes
 {
     [Header("References")]
@@ -49,7 +49,7 @@ public class IceWizard : Heroes
         upgradeCost = 100f;
         towerIndex = 1;
     }
-    
+
     private void OnMouseDown()
     {
         HeroUpgrade upgradeUI = FindObjectOfType<HeroUpgrade>();
@@ -88,7 +88,15 @@ public class IceWizard : Heroes
             {
                 Shoot();
 
-                FreezeEnemies();
+                string currentSceneName = SceneManager.GetActiveScene().name;
+                if (currentSceneName == "SampleScene")
+                {
+                    FreezeEnemies();
+                }
+                else if (currentSceneName == "DemonScene")
+                {
+                    FreezeEnemiesV2();
+                }
                 anim.SetBool("area", true);
                 timeUntilFire = 0f;
             }
@@ -122,6 +130,7 @@ public class IceWizard : Heroes
             {
                 RaycastHit2D hit = hits[i];
                 EnemyMovement em = hit.transform.GetComponent<EnemyMovement>();
+
                 em.UpdateSpeed(0.5f);
                 StartCoroutine(ResetEnemySpeed(em));
                 SoundManager.instance.PlaySound(iceSound);
@@ -130,7 +139,32 @@ public class IceWizard : Heroes
 
     }
 
+    private void FreezeEnemiesV2()
+    {
+        RaycastHit2D[] hits = Physics2D.CircleCastAll(transform.position, targetingRange, (Vector2)transform.position, 0f, enemyMask);
+        if (hits.Length > 0)
+        {
+            for (int i = 0; i < hits.Length; i++)
+            {
+                RaycastHit2D hit = hits[i];
+
+                EnemyMovementV2 emV2 = hit.transform.GetComponent<EnemyMovementV2>();
+                emV2.UpdateSpeed(0.5f);
+                StartCoroutine(ResetEnemySpeedV2(emV2));
+                SoundManager.instance.PlaySound(iceSound);
+            }
+        }
+
+    }
+
     private IEnumerator ResetEnemySpeed(EnemyMovement em)
+    {
+        yield return new WaitForSeconds(freezeTime);
+        em.ResetSpeed();
+
+    }
+
+    private IEnumerator ResetEnemySpeedV2(EnemyMovementV2 em)
     {
         yield return new WaitForSeconds(freezeTime);
         em.ResetSpeed();
