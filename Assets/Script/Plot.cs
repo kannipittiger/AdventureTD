@@ -16,6 +16,14 @@ public class Plot : MonoBehaviour
         startColor = sr.color;
     }
 
+    private void Update(){
+        if(tower == null){
+            GetComponent<Collider2D>().enabled = true;
+        }else{
+            GetComponent<Collider2D>().enabled = false;
+        }
+    }
+
     private void OnMouseEnter(){
         sr.color = hoverColor;
     }
@@ -25,7 +33,8 @@ public class Plot : MonoBehaviour
     }
 
     private void OnMouseDown(){
-        if (tower != null) return;
+        if (tower != null) 
+        return;
 
         Tower towerToBuild = BuildManager.main.GetSelectedTower();
         
