@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class ChangeScript : MonoBehaviour
 {
+    public static bool isVictory;
     public void MoveToGame(){
         SceneManager.LoadScene("SampleScene");
     }
@@ -19,6 +20,7 @@ public class ChangeScript : MonoBehaviour
     }
 
     public void GoRetreat(){
+        isVictory = true;
         SceneManager.LoadScene("start game");
     }
 

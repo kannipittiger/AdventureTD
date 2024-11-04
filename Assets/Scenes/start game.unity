@@ -312,7 +312,6 @@ MonoBehaviour:
   invalidText: {fileID: 852913599}
   mainMenu: {fileID: 485590744}
   selectStagePanel: {fileID: 111563079}
-  enemySpawner: {fileID: 0}
 --- !u!1 &145158208
 GameObject:
   m_ObjectHideFlags: 0
@@ -2594,7 +2593,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Stage 2
+  m_text: 'Play
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 902996a7940c8d542b372107e469d722, type: 2}
   m_sharedMaterial: {fileID: 8189742154648577127, guid: 902996a7940c8d542b372107e469d722, type: 2}
@@ -2922,7 +2923,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Stage 1
+  m_text: 'Stage 2
+
 
 '
   m_isRightToLeft: 0

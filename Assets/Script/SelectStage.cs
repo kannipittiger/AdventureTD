@@ -18,44 +18,63 @@ public class SelectStage : MonoBehaviour
     [SerializeField] public GameObject selectStagePanel;
 
     // private EnemySpawner enemySpawner;
-    [SerializeField] private EnemySpawner enemySpawner;
-
-    private void Start(){
-    enemySpawner = FindObjectOfType<EnemySpawner>();
-    invalidText.gameObject.SetActive(false);
-    firstStageText.text = $"Play";
-    secondStageText.text = $"Locked";
-}
-
-
-    // private void Update(){
-    //     if(enemySpawner.isVictory == true){
-    //         secondStageText.text = $"Play";
-    //     }
-    // }
-    public void CheckVictory(){
-    if (enemySpawner != null && enemySpawner.isVictory){
-        SceneManager.LoadScene("DemonScene");
-    } else {
+    private bool isCheck;
+    private void Start()
+    {
+        isCheck = ChangeScript.isVictory;
+        invalidText.gameObject.SetActive(false);
+        firstStageText.text = $"Play";
+        if (isCheck)
+        {
+            secondStageText.text = $"Play";
+            secondStageButton.onClick.AddListener(TaskOnClick);
+        }
+        else
+        {
+            secondStageText.text = $"Locked";
+            secondStageButton.onClick.AddListener(LockOnClick);
+            ;
+        }
+    }
+    private void LockOnClick(){
         StartCoroutine(ShowInvalidText("Complete stage 1 first!"));
     }
-}
+
+    // public void CheckVictory()
+    // {
+    //     if (isCheck)
+    //     {
+    //         secondStageText.text = $"Play";
+    //         secondStageButton.onClick.AddListener(TaskOnClick);
+    //     }
+    //     else
+    //     {
+    //         secondStageText.text = $"Locked";
+    //         StartCoroutine(ShowInvalidText("Complete stage 1 first!"));
+    //     }
+    // }
+    private void TaskOnClick(){
+        SceneManager.LoadScene("DemonScene");
+    }
 
 
-    public void ToStageOne(){
+    public void ToStageOne()
+    {
         SceneManager.LoadScene("SampleScene");
     }
 
-    public void ToMenu(){
+    public void ToMenu()
+    {
         selectStagePanel.SetActive(false);
     }
 
-    private IEnumerator ShowInvalidText(string message){
-    invalidText.gameObject.SetActive(true);
-    invalidText.text = message;
-    yield return new WaitForSeconds(1f);  // Wait for 3 seconds before hiding the message
-    invalidText.gameObject.SetActive(false);
-}
+    private IEnumerator ShowInvalidText(string message)
+    {
+        invalidText.gameObject.SetActive(true);
+        invalidText.text = message;
+        yield return new WaitForSeconds(1f);  // Wait for 3 seconds before hiding the message
+        invalidText.gameObject.SetActive(false);
+    }
 
 
 }
