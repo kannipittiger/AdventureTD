@@ -32,6 +32,7 @@ public class EnemySpawner : MonoBehaviour
     private int currentHP; // ตัวแปรที่จะใช้เก็บค่า hitPoints
     private int currentSpeed;
     private int currentMoney;
+    public bool isVictory = false;
 
     private void Awake()
     {
@@ -141,6 +142,7 @@ public class EnemySpawner : MonoBehaviour
         else if (currentWave > 8)
         {
             StartCoroutine(ShowEndMessageAndLoadScene("You completed Wave 8!\nLoading Next Stage..."));
+            isVictory = true;
         }
         StartCoroutine(StartWave());
     }
