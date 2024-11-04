@@ -47,8 +47,8 @@
 
         public void UpgradeStats()
         {
-            damage *= 1.3f; // Increase damage by 20%
-            targetingRange *= 1.1f; // Increase targeting range by 10%
+            damage *= 1.4f; // Increase damage by 20%
+            targetingRange *= 1.2f; // Increase targeting range by 10%
             upgradeCost *= 1.2f;
             // Damage = damage; // Update the Damage property with the new value
 

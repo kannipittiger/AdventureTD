@@ -14,4 +14,12 @@ public class ChangeScript : MonoBehaviour
         Debug.Log("AOk");
     }
 
+    public void Gonext(){
+        SceneManager.LoadScene("DemonScene");
+    }
+
+    public void GoRetreat(){
+        SceneManager.LoadScene("start game");
+    }
+
 }

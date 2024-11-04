@@ -70,8 +70,8 @@ public class HeroUpgrade : MonoBehaviour
             float currentRange = currentHero.targetingRange;
             float currentUpgradeCost = currentHero.UpgradeCost;
             currentRange.ToString("0.00");
-            float nextDamage = currentDamage * 1.2f;
-            float nextRange = currentRange * 1.1f;
+            float nextDamage = currentDamage * 1.4f;
+            float nextRange = currentRange * 1.2f;
             float nextUpgrade = currentUpgradeCost * 1.2f;
 
             currentDamage = Mathf.RoundToInt(currentDamage);
