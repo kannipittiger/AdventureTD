@@ -65,6 +65,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 2289750780908232284, guid: 2faf73131e5dd9d43a68b1b18fd40b9a, type: 3}
   firingPoint: {fileID: 3297565384605025315}
   gunSound: {fileID: 8300000, guid: a0a9f11ef9ec6b8409db4494b430593e, type: 3}
+  heroRange: {fileID: 6550266092354859800}
   lineAttackRange: 8
   lineAttackWidth: 1
   offsetLeft: {x: -1, y: 0}
@@ -389,6 +390,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c99896530483a4a48aa30303251598c8, type: 3}
+--- !u!1 &6550266092354859800 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2756279649604818747, guid: c99896530483a4a48aa30303251598c8, type: 3}
+  m_PrefabInstance: {fileID: 8982286462486422563}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7338719176431509421 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1837226514802916238, guid: c99896530483a4a48aa30303251598c8, type: 3}

@@ -9,6 +9,7 @@ public class Gunner : Heroes
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform firingPoint;
     [SerializeField] private AudioClip gunSound;
+    [SerializeField] private GameObject heroRange;
     // [SerializeField] private Transform rangeObject;
 
     [Header("Attributes")]
@@ -67,6 +68,13 @@ public class Gunner : Heroes
         }
         upgradeUI.Initialize(this);
         upgradeUI.ToggleUpgradePanel(true);
+        StartCoroutine(setRange());
+    }
+    
+    private IEnumerator setRange(){
+        heroRange.SetActive(true);
+        yield return new WaitForSeconds(3f);
+        heroRange.SetActive(false);
     }
     private void Update()
     {

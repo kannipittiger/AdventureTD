@@ -10,6 +10,7 @@ public class IceWizard : Heroes
     [SerializeField] private Transform heroRotationPoint;
     [SerializeField] private LayerMask enemyMask;
     [SerializeField] private GameObject bulletPrefab;
+    [SerializeField] private GameObject heroRange;
     [SerializeField] private Transform firingPoint;
     [SerializeField] private AudioClip iceSound;
     // [SerializeField] private Transform rangeObject; // Reference to the Range GameObject
@@ -60,6 +61,13 @@ public class IceWizard : Heroes
         }
         upgradeUI.Initialize(this);
         upgradeUI.ToggleUpgradePanel(true);
+        StartCoroutine(setRange());
+    }
+    
+    private IEnumerator setRange(){
+        heroRange.SetActive(true);
+        yield return new WaitForSeconds(3f);
+        heroRange.SetActive(false);
     }
 
     private void Update()
