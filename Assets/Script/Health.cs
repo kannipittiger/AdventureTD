@@ -10,7 +10,7 @@ public class Health : MonoBehaviour
 
     [SerializeField] private int currencyWorth = 50;
     public int currentHP;
-    public int hitPoints = 30;
+    public int hitPoints = 50;
 
     private bool isDestroyed = false;
 

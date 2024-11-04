@@ -40,8 +40,8 @@ public class Wizard : Heroes
         }
 
         // Set specific values for Wizard if needed
-        aps = 0.8f; // example value
-        damage = 30f; // example value
+        aps = 0.7f; // example value
+        damage = 20f; // example value
         upgradeCost = 70f;
         towerIndex = 0;
     }
