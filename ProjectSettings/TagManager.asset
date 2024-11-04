@@ -78,9 +78,9 @@ TagManager:
   - name: props
     uniqueID: 640223259
     locked: 0
-  - name: onprop
-    uniqueID: 999861965
-    locked: 0
   - name: Hero
     uniqueID: 1195195389
+    locked: 0
+  - name: onprop
+    uniqueID: 999861965
     locked: 0
