@@ -37,8 +37,7 @@ public class SelectStage : MonoBehaviour
     if (enemySpawner != null && enemySpawner.isVictory){
         SceneManager.LoadScene("DemonScene");
     } else {
-        invalidText.gameObject.SetActive(true);
-        invalidText.text = "Complete stage 1 first!";
+        StartCoroutine(ShowInvalidText("Complete stage 1 first!"));
     }
 }
 
@@ -50,6 +49,13 @@ public class SelectStage : MonoBehaviour
     public void ToMenu(){
         selectStagePanel.SetActive(false);
     }
+
+    private IEnumerator ShowInvalidText(string message){
+    invalidText.gameObject.SetActive(true);
+    invalidText.text = message;
+    yield return new WaitForSeconds(1f);  // Wait for 3 seconds before hiding the message
+    invalidText.gameObject.SetActive(false);
+}
 
 
 }

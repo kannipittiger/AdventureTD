@@ -87,6 +87,12 @@ public class HeroUpgrade : MonoBehaviour
             upgradeCostText.text = $"{currentUpgradeCost}$";
             countUpgradeText.text = $"Upgrade ({currentHero.countUpgrade})";
             upgradeButtonText.text = $"Upgrade";
+
+            ArrowUp.gameObject.SetActive(true);
+            ArrowDown.gameObject.SetActive(true);
+            nextDamageText.gameObject.SetActive(true);
+            nextRangeText.gameObject.SetActive(true);
+            upgradeCostText.gameObject.SetActive(true);
         }
 
     }
@@ -120,33 +126,34 @@ public class HeroUpgrade : MonoBehaviour
         nextDamageText.gameObject.SetActive(false);
         nextRangeText.gameObject.SetActive(false);
         upgradeCostText.gameObject.SetActive(false);
+        upgradePanel.SetActive(false);
     }
 
     // Method to sell the hero
     private void SellHero()
-{
-    if (currentHero != null)
     {
-        // Calculate 70% of the hero's original cost
-        int sellAmount = Mathf.RoundToInt(currentHero.OriginalCost * 0.7f);
-        
-        // Add the sell amount to the player's currency
-        LevelManager.main.currency += sellAmount;
+        if (currentHero != null)
+        {
+            // Calculate 70% of the hero's original cost
+            int sellAmount = Mathf.RoundToInt(currentHero.OriginalCost * 0.7f);
 
-        // Decrease the placement count in BuildManager
-        BuildManager.main.towerPlacementCount[currentHero.TowerIndex]--;
+            // Add the sell amount to the player's currency
+            LevelManager.main.currency += sellAmount;
 
-        // Remove the hero from the scene
-        Destroy(currentHero.gameObject);
+            // Decrease the placement count in BuildManager
+            BuildManager.main.towerPlacementCount[currentHero.TowerIndex]--;
 
-        // Close the upgrade panel
-        upgradePanel.SetActive(false);
+            // Remove the hero from the scene
+            Destroy(currentHero.gameObject);
+
+            // Close the upgrade panel
+            upgradePanel.SetActive(false);
+        }
+        else
+        {
+            Debug.LogError("No hero to sell.");
+        }
     }
-    else
-    {
-        Debug.LogError("No hero to sell.");
-    }
-}
 
 
 }
