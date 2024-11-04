@@ -295,7 +295,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4, y: 4}
+  m_Size: {x: 1, y: 1.5}
   m_EdgeRadius: 0
 --- !u!1001 &8723283969689771394
 PrefabInstance:
@@ -356,6 +356,18 @@ PrefabInstance:
     - target: {fileID: 8534476357135549172, guid: 1e59eb09c6e9f404a8e2f64f819e93fc, type: 3}
       propertyPath: m_Name
       value: KnightRange
+      objectReference: {fileID: 0}
+    - target: {fileID: 9217475780169789193, guid: 1e59eb09c6e9f404a8e2f64f819e93fc, type: 3}
+      propertyPath: m_Color.a
+      value: 0.19607843
+      objectReference: {fileID: 0}
+    - target: {fileID: 9217475780169789193, guid: 1e59eb09c6e9f404a8e2f64f819e93fc, type: 3}
+      propertyPath: m_Color.b
+      value: 0.9607843
+      objectReference: {fileID: 0}
+    - target: {fileID: 9217475780169789193, guid: 1e59eb09c6e9f404a8e2f64f819e93fc, type: 3}
+      propertyPath: m_Color.r
+      value: 0.50980395
       objectReference: {fileID: 0}
     - target: {fileID: 9217475780169789193, guid: 1e59eb09c6e9f404a8e2f64f819e93fc, type: 3}
       propertyPath: m_SortingLayer

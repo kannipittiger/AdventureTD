@@ -365,6 +365,18 @@ PrefabInstance:
       value: SniperRange
       objectReference: {fileID: 0}
     - target: {fileID: 6811814075331646634, guid: c99896530483a4a48aa30303251598c8, type: 3}
+      propertyPath: m_Color.a
+      value: 0.19607843
+      objectReference: {fileID: 0}
+    - target: {fileID: 6811814075331646634, guid: c99896530483a4a48aa30303251598c8, type: 3}
+      propertyPath: m_Color.b
+      value: 0.9607843
+      objectReference: {fileID: 0}
+    - target: {fileID: 6811814075331646634, guid: c99896530483a4a48aa30303251598c8, type: 3}
+      propertyPath: m_Color.r
+      value: 0.50980395
+      objectReference: {fileID: 0}
+    - target: {fileID: 6811814075331646634, guid: c99896530483a4a48aa30303251598c8, type: 3}
       propertyPath: m_SortingLayer
       value: 11
       objectReference: {fileID: 0}
