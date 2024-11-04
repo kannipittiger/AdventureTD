@@ -47,7 +47,7 @@ public class Knight : Heroes
 
         // Set specific values for Wizard if needed
         aps = 0.4f; // example value
-        damage = 35f; // example value
+        damage = 30f; // example value
         upgradeCost = 130f;
         towerIndex = 2;
     }
