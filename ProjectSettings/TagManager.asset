@@ -69,6 +69,12 @@ TagManager:
   - name: hilldown
     uniqueID: 1079789979
     locked: 0
+  - name: underProp
+    uniqueID: 3738294133
+    locked: 0
+  - name: Enemy
+    uniqueID: 1025146771
+    locked: 0
   - name: props
     uniqueID: 640223259
     locked: 0
