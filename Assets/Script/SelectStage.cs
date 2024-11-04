@@ -15,34 +15,40 @@ public class SelectStage : MonoBehaviour
     [SerializeField] private TextMeshProUGUI secondStageText;
     [SerializeField] private TextMeshProUGUI invalidText;
     [SerializeField] private Button mainMenu;
+    [SerializeField] public GameObject selectStagePanel;
 
-    private EnemySpawner enemySpawner;
+    // private EnemySpawner enemySpawner;
+    [SerializeField] private EnemySpawner enemySpawner;
+
     private void Start(){
-        invalidText.gameObject.SetActive(false);
-        secondStageText.text = $"Locked";
-    }
+    enemySpawner = FindObjectOfType<EnemySpawner>();
+    invalidText.gameObject.SetActive(false);
+    firstStageText.text = $"Play";
+    secondStageText.text = $"Locked";
+}
 
-    private void Update(){
-        if(enemySpawner.isVictory == true){
-            secondStageText.text = $"Play";
-        }
-    }
+
+    // private void Update(){
+    //     if(enemySpawner.isVictory == true){
+    //         secondStageText.text = $"Play";
+    //     }
+    // }
     public void CheckVictory(){
-        if(enemySpawner.isVictory == true){
-            
-            SceneManager.LoadScene("DemonScene");
-        }else{
-            invalidText.gameObject.SetActive(true);
-            invalidText.text = $"Comeplete stage 1 first!!";
-        }
+    if (enemySpawner != null && enemySpawner.isVictory){
+        SceneManager.LoadScene("DemonScene");
+    } else {
+        invalidText.gameObject.SetActive(true);
+        invalidText.text = "Complete stage 1 first!";
     }
+}
+
 
     public void ToStageOne(){
         SceneManager.LoadScene("SampleScene");
     }
 
     public void ToMenu(){
-        SceneManager.LoadScene("start game");
+        selectStagePanel.SetActive(false);
     }
 
 
