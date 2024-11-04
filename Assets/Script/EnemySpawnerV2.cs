@@ -3,17 +3,17 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
-public class EnemySpawner : MonoBehaviour
+public class EnemySpawnerV2 : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private GameObject[] enemyPrefabs;
     [SerializeField] TextMeshProUGUI waveText; // เพิ่มตัวแปรสำหรับข้อความ
 
     [Header("Attributes")]
-    [SerializeField] private int baseEnemies = 6;
-    [SerializeField] private float enemiesPerSecond = 0.5f;
+    [SerializeField] private int baseEnemies = 10;
+    [SerializeField] private float enemiesPerSecond = 1f;
     [SerializeField] private float timeBetweenWaves = 5f;
-    [SerializeField] private float difficultlyScalingFactor = 0.75f;
+    [SerializeField] private float difficultlyScalingFactor = 1f;
     [SerializeField] private int baseEnemyHealth = 30;
     [SerializeField] private int baseEnemySpeed = 2;
     [SerializeField] private int baseMoney = 50;
@@ -115,7 +115,6 @@ public class EnemySpawner : MonoBehaviour
         }
         else if (currentWave == 5)
         {
-
             StartCoroutine(ShowWaveText("Wave 5"));
         }
         else if (currentWave == 6)
@@ -179,7 +178,7 @@ public class EnemySpawner : MonoBehaviour
         GameObject prefabToSpawn = enemyPrefabs[index];
         GameObject enemyInstance = Instantiate(prefabToSpawn, LevelManager.main.startPoint.position, Quaternion.identity);
         Health enemyHealth = enemyInstance.GetComponent<Health>();
-        EnemyMovement enemySpeed = enemyInstance.GetComponent<EnemyMovement>();
+        EnemyMovementV2 enemySpeed = enemyInstance.GetComponent<EnemyMovementV2>();
         Health enemyDrop = enemyInstance.GetComponent<Health>();
         if (currentWave == 2)
         {

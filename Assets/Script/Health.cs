@@ -1,27 +1,47 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour
 {
     public static Health main;
     [Header("Attributes")]
-    
+
     [SerializeField] private int currencyWorth = 50;
     public int currentHP;
     public int hitPoints = 30;
 
     private bool isDestroyed = false;
 
-    private void Awake(){
+    private void Awake()
+    {
         main = this;
         currentHP = hitPoints;
     }
-    public void TakeDamage(int dmg){
+    public void TakeDamage(int dmg)
+    {
+        if (isDestroyed) return; // Exit early if already destroyed
+
         currentHP -= dmg;
-        if(currentHP <= 0 && !isDestroyed){
-            EnemySpawner.onEnemyDestroy.Invoke();
+
+        if (currentHP <= 0)
+        {
+            // Trigger events based on the active scene
+            string currentSceneName = SceneManager.GetActiveScene().name;
+            if (currentSceneName == "SampleScene")
+            {
+                EnemySpawner.onEnemyDestroy.Invoke();
+            }
+            else if (currentSceneName == "DemonScene")
+            {
+                EnemySpawnerV2.onEnemyDestroy.Invoke();
+            }
+
+            // Increase player currency
             LevelManager.main.IncreaseCurrency(currencyWorth);
+
+            // Mark as destroyed and destroy the object
             isDestroyed = true;
             Destroy(gameObject);
         }
@@ -36,7 +56,8 @@ public class Health : MonoBehaviour
         currencyWorth = worth;
         // Debug.Log("Enemy currency worth updated: " + currencyWorth);
     }
-    public void ResetCurrencyWorth(){
+    public void ResetCurrencyWorth()
+    {
         currencyWorth = 50;
     }
 }
