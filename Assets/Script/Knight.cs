@@ -13,6 +13,7 @@ public class Knight : Heroes
     // [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform firingPoint;
     [SerializeField] private AudioClip swordSound;
+    [SerializeField] private GameObject heroRange;
     // [SerializeField] private Transform rangeObject; // Reference to the Range GameObject
 
 
@@ -61,6 +62,13 @@ public class Knight : Heroes
         }
         upgradeUI.Initialize(this);
         upgradeUI.ToggleUpgradePanel(true);
+        StartCoroutine(setRange());
+    }
+    
+    private IEnumerator setRange(){
+        heroRange.SetActive(true);
+        yield return new WaitForSeconds(3f);
+        heroRange.SetActive(false);
     }
     private void Update()
     {

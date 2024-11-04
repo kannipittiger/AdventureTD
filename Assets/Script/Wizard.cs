@@ -10,6 +10,7 @@ public class Wizard : Heroes
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform firingPoint;
     [SerializeField] private AudioClip fireSound;
+    [SerializeField] private GameObject heroRange;
 
     private Animator anim;
     private Transform target;
@@ -44,6 +45,7 @@ public class Wizard : Heroes
         damage = 20f; // example value
         upgradeCost = 70f;
         towerIndex = 0;
+        heroRange.SetActive(false);
     }
 
 
@@ -57,6 +59,13 @@ public class Wizard : Heroes
         }
         upgradeUI.Initialize(this);
         upgradeUI.ToggleUpgradePanel(true);
+        StartCoroutine(setRange());
+    }
+    
+    private IEnumerator setRange(){
+        heroRange.SetActive(true);
+        yield return new WaitForSeconds(3f);
+        heroRange.SetActive(false);
     }
 
     private void Update()
