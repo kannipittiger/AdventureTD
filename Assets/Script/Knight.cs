@@ -49,7 +49,7 @@ public class Knight : Heroes
         // Set specific values for Wizard if needed
         aps = 0.5f; // example value
         damage = 50f; // example value
-        upgradeCost = 130f;
+        upgradeCost = 180f;
         towerIndex = 2;
     }
     private void OnMouseDown()

@@ -175,56 +175,56 @@ public class EnemySpawner : MonoBehaviour
 
 
     private void SpawnEnemy()
-{
-    int index;
-    if (currentWave == 1)
     {
-        // wave 1 สุ่มค่าในช่วง 0 ถึง length-1 (ไม่รวมตัวสุดท้าย)
-        index = Random.Range(0, enemyPrefabs.Length - 1);
-    }
-    else
-    {
-        // wave อื่น ๆ สุ่มค่าในช่วง 0 ถึง length (รวมทั้งหมด)
-        index = Random.Range(0, enemyPrefabs.Length);
-    }
+        int index;
+        if (currentWave == 1)
+        {
+            // wave 1 สุ่มค่าในช่วง 0 ถึง length-1 (ไม่รวมตัวสุดท้าย)
+            index = Random.Range(0, enemyPrefabs.Length - 1);
+        }
+        else
+        {
+            // wave อื่น ๆ สุ่มค่าในช่วง 0 ถึง length (รวมทั้งหมด)
+            index = Random.Range(0, enemyPrefabs.Length);
+        }
 
-    GameObject prefabToSpawn = enemyPrefabs[index];
-    GameObject enemyInstance = Instantiate(prefabToSpawn, LevelManager.main.startPoint.position, Quaternion.identity);
+        GameObject prefabToSpawn = enemyPrefabs[index];
+        GameObject enemyInstance = Instantiate(prefabToSpawn, LevelManager.main.startPoint.position, Quaternion.identity);
 
-    Health enemyHealth = enemyInstance.GetComponent<Health>();
-    EnemyMovement enemySpeed = enemyInstance.GetComponent<EnemyMovement>();
-    Health enemyDrop = enemyInstance.GetComponent<Health>();
+        Health enemyHealth = enemyInstance.GetComponent<Health>();
+        EnemyMovement enemySpeed = enemyInstance.GetComponent<EnemyMovement>();
+        Health enemyDrop = enemyInstance.GetComponent<Health>();
 
-    if (currentWave == 2)
-    {
-        enemyHealth.SetHealth(currentHP);
+        if (currentWave == 2)
+        {
+            enemyHealth.SetHealth(currentHP);
+        }
+        else if (currentWave == 3)
+        {
+            enemySpeed.UpdateSpeed(currentSpeed);
+        }
+        else if (currentWave == 4)
+        {
+            enemyDrop.SetCurrencyWorth(currentMoney);
+        }
+        else if (currentWave == 5)
+        {
+            enemyDrop.ResetCurrencyWorth();
+        }
+        else if (currentWave == 6)
+        {
+            enemySpeed.UpdateSpeed(currentSpeed);
+        }
+        else if (currentWave == 7)
+        {
+            enemyHealth.SetHealth(currentHP);
+        }
+        else if (currentWave == 8)
+        {
+            enemyHealth.SetHealth(currentHP);
+            enemySpeed.UpdateSpeed(currentSpeed);
+        }
     }
-    else if (currentWave == 3)
-    {
-        enemySpeed.UpdateSpeed(currentSpeed);
-    }
-    else if (currentWave == 4)
-    {
-        enemyDrop.SetCurrencyWorth(currentMoney);
-    }
-    else if (currentWave == 5)
-    {
-        enemyDrop.ResetCurrencyWorth();
-    }
-    else if (currentWave == 6)
-    {
-        enemySpeed.UpdateSpeed(currentSpeed);
-    }
-    else if (currentWave == 7)
-    {
-        enemyHealth.SetHealth(currentHP);
-    }
-    else if (currentWave == 8)
-    {
-        enemyHealth.SetHealth(currentHP);
-        enemySpeed.UpdateSpeed(currentSpeed);
-    }
-}
 
     private int EnemiesPerWave()
     {

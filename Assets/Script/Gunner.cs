@@ -55,7 +55,7 @@ public class Gunner : Heroes
         // Set specific values for Wizard if needed
         aps = 0.5f; // example value
         damage = 40f; // example value
-        upgradeCost = 130f;
+        upgradeCost = 220f;
         towerIndex = 3;
     }
     private void OnMouseDown()
